@@ -10,7 +10,7 @@ extern "C" int yylex();
 extern "C" int yyparse();
 extern FILE *yyin;
 extern char *yytext;
- 
+
 void yyerror(const char *s);
 
 Expr *root;
@@ -18,19 +18,29 @@ Expr *root;
 
 // Custom types (Arg, Args, Fn, Expr) are defined in parser.h
 %union {
-	int  ival;
-	char *sval;
-	Arg  *argval;
-	Args *argsval;
-	Fn   *fnval;
-	Expr *exprval;
+	int  	ival;
+	char* 	sval;
+	Arg* 	argval;
+	Args* 	argsval;
+	Fn*		fnval;
+	Expr*	exprval;
 }
 
 // Task 1 - Define your tokens here
-%token PLACEHOLDER_REMOVE_ME
+%token <ival> 	NUM
+%token <ival> 	HEX
+%token <sval> 	NAME
+%token 			BLEFT
+%token 			BRIGHT
+%token 			COMMA
+%token 			CONJ
+%token 			DISJ
+%token 			NEG
 
 // Task 2 - define your non-terminal types here
-%type  <exprval> expr
+%type <exprval> expr
+%type <fnval> 	func
+// >>>>>>>>>>>>>>>>> TODO :: CODE HERE !!!! <<<<<<<<<<<<<< //
 %%
 
 parser:
@@ -39,11 +49,15 @@ parser:
 
 // Task 2 - define production rules here
 expr:
-	PLACEHOLDER_REMOVE_ME
+	expr CONJ expr { $$ = new Expr(OP_CONJ, $1, $3); }
+	|
+	expr DISJ expr { $$ = new Expr(OP_DISJ, $1, $3); }
+	|
+	NEG expr { $$ = new Expr(OP_NEG, $2); }
 	;
 %%
 
-//#define LEXER_IMPLEMENTED
+#define LEXER_IMPLEMENTED
 
 Ast parse(FILE *fp)
 {

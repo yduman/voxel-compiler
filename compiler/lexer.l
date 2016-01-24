@@ -17,5 +17,14 @@
 
  // Task 1 - add your implementation in between the '%%'s
 %%
-[ \t\r\n]      ; // ignore whitespaces and new lines
+[ \t\r\n]      	; 
+[a-zA-Z0-9]+	{ yylval.sval = strdup(yytext); return NAME; }
+[0-9]+			{ yylval.ival = atoi(yytext); return NUM; }
+[x0-9]+			{ yylval.ival = strtol(yytext, NULL, 0); return HEX; }
+"("				{ return BLEFT; }
+")"				{ return BRIGHT; }
+","				{ return COMMA; }
+"|"				{ return DISJ; }
+"&"				{ return KONJ; }
+"!"				{ return NEG; }
 %%
