@@ -25,6 +25,6 @@
 ")"				{ return BRIGHT; }
 ","				{ return COMMA; }
 "|"				{ return DISJ; }
-"&"				{ return KONJ; }
+"&"				{ return CONJ; }
 "!"				{ return NEG; }
 %%

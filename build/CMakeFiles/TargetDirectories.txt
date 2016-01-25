@@ -1,3 +1,0 @@
-/home/yduman/Schreibtisch/Praktikum4-Coderahmen/build/CMakeFiles/compiler.dir
-/home/yduman/Schreibtisch/Praktikum4-Coderahmen/build/CMakeFiles/disasm.dir
-/home/yduman/Schreibtisch/Praktikum4-Coderahmen/build/CMakeFiles/sim.dir

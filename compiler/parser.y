@@ -32,14 +32,17 @@ Expr *root;
 %token <sval> 	NAME
 %token 			BLEFT
 %token 			BRIGHT
-%token 			COMMA
+%token 			COMMA	// noetig (?)
 %token 			CONJ
 %token 			DISJ
 %token 			NEG
 
 // Task 2 - define your non-terminal types here
 %type <exprval> expr
-%type <fnval> 	func
+%type <fnval> 	fn
+%type <argsval> args 
+%type <argval> 	arg
+%type 			op
 // >>>>>>>>>>>>>>>>> TODO :: CODE HERE !!!! <<<<<<<<<<<<<< //
 %%
 
@@ -49,11 +52,33 @@ parser:
 
 // Task 2 - define production rules here
 expr:
-	expr CONJ expr { $$ = new Expr(OP_CONJ, $1, $3); }
+	expr op expr 				{ $$ = new Expr($2, $1, $3); }
 	|
-	expr DISJ expr { $$ = new Expr(OP_DISJ, $1, $3); }
+	op expr 					{ $$ = new Expr($1, $2); }
 	|
-	NEG expr { $$ = new Expr(OP_NEG, $2); }
+	fn op 						{ $$ = new Expr($2, $1); }
+	|
+	fn 							{ ; }
+	;
+fn: 
+	NAME BLEFT args BRIGHT 		{ $$ = new Fn($1, $3); }
+	;
+args:
+	arg arg arg arg arg 		{ $$ = new Args(); } 
+	| 
+	arg arg arg arg arg arg arg { $$ = new Args(); }
+	;
+arg: 
+	NUM 						{ $$ = new Arg($1); }
+	|
+	HEX 						{ $$ = new Arg($1); }
+	;
+op:
+	CONJ 						{ $$ = OP_CONJ; } 
+	|
+	DISJ 						{ $$ = OP_DISJ; }
+	|
+	NEG 						{ $$ = OP_NEG; }
 	;
 %%
 
