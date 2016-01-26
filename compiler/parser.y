@@ -41,7 +41,7 @@ Expr *root;
 %type <exprval> expr
 %type <argsval> args 
 %type <argval> arg
-%type <fnval> fn
+%type <fnval> fncall
 %%
 
 parser:
@@ -56,19 +56,26 @@ expr:
 	|
 	NEG expr { $$ = new Expr(OP_NEG, $2); }
 	|
-	fn CONJ { $$ = new Expr(OP_CONJ, $1); }
+	BLEFT expr CONJ expr BRIGHT { $$ = new Expr(OP_CONJ, $2, $4); }
 	|
-	fn DISJ { $$ = new Expr(OP_DISJ, $1); }
+	BLEFT expr DISJ expr BRIGHT { $$ = new Expr(OP_DISJ, $2, $4); }
 	|
-	fn NEG 	{ $$ = new Expr(OP_NEG, $1); }
+	BLEFT NEG expr BRIGHT { $$ = new Expr(OP_NEG, $3); }
+	|
+	fncall { ; }
+	|
+	BLEFT fncall BRIGHT { ; }
 	;
-fn: 
+fncall: 
 	NAME BLEFT args BRIGHT { $$ = new Fn($1, $3); }
 	;
 args:
-	args COMMA arg { $$ = new Args(); $$->add($3); }
+	arg COMMA arg COMMA arg COMMA arg COMMA arg { $$ = new Args(); 
+		$$->add($1); $$->add($3); $$->add($5); $$->add($7); $$->add($9); }
 	|
-	arg { $$->add($1); }
+	arg COMMA arg COMMA arg COMMA arg COMMA arg COMMA arg COMMA arg { $$ = new Args(); 
+		$$->add($1); $$->add($3); $$->add($5); $$->add($7); 
+		$$->add($9); $$->add($11); $$->add($13); }
 	;
 arg: 
 	NUM { $$ = new Arg($1); }

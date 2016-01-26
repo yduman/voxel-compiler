@@ -240,7 +240,9 @@ struct Ast {
 	inline bool check(uint32_t &dim)
 	{
 		// Task 3 - modify if you can't solve the optional task, see note below.
-		// NOTE: dim is used to determine the dimensions of the loop. We can use a constant here (e.g. 128) or the maximum of the x, y and z values of each function.
+		// NOTE: dim is used to determine the dimensions of the loop. 
+		// We can use a constant here (e.g. 128) 
+		// or the maximum of the x, y and z values of each function.
 		return root->check(dim);
 	}
 
