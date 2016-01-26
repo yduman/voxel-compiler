@@ -108,7 +108,50 @@ struct Fn {
 	inline bool check(uint32_t &dim)
 	{
 		// Task 3 - add your code here
-		return false;
+		if (dim != 128)
+			return false;
+		/*
+		std::cout << "TESTING SIZE" << std::endl;
+		std::cout << args->size() << " = SIIIZZEEEE" << std::endl;
+
+		std::cout << "TESTING NAME" << std::endl;
+		std::cout << this->name << " = NAMMMMEEEEE" << std::endl;
+
+		std::cout << "AREA 2" << std::endl;
+
+		// Funktionsnamen pruefen
+		if (strcmp(name, "sphere") != 0) {
+			std::cout << "HELLOOO 2" << std::endl;
+			std::cout << "Invalid Functionname! Use \'sphere\', \'box\' or \'heart\' as names!" << std::endl;
+			return false;
+		}
+
+		if (strcmp(name, "box") != 0) {
+			std::cout << "Invalid Functionname! Use \'sphere\', \'box\' or \'heart\' as names!" << std::endl;
+			return false;
+		}
+
+		if (strcmp(name, "heart") != 0) {
+			std::cout << "Invalid Functionname! Use \'sphere\', \'box\' or \'heart\' as names!" << std::endl;
+			return false;
+		}
+
+		// Argumente pruefen
+		if (name == "heart" || name == "sphere") {
+			if (args->size() != 5) {
+				std::cout << "Invalid number of args! \'sphere\' or \'heart\' are using FIVE args!" << std::endl;
+				return false;
+			}
+		}
+
+		if (name == "box") {
+			if (args->size() != 7) {
+				std::cout << "Invalid number of args! \'box\' is using SEVEN args!" << std::endl;
+				return false;
+			}
+		}
+		*/
+		return true;
 	}
 
 	inline void code(uint32_t reg, Writer &writer)
@@ -182,9 +225,18 @@ struct Expr {
 	inline friend std::ostream &operator<<(std::ostream &os, const Expr &expr);
 
 	inline bool check(uint32_t &dim)
-	{
+	{	
+		if (dim != 128)
+			return false;
+
 		// Task 3 - add your code here
-		return false;
+		/*
+		if (fn->check(dim) == false) {
+			std::cout << "Incorrect Function! Check your functions for errors!" << std::endl;
+			return false;
+		}
+		*/
+		return true;
 	}
 
 	inline uint32_t code(uint32_t reg, Writer &writer)
@@ -243,7 +295,11 @@ struct Ast {
 		// NOTE: dim is used to determine the dimensions of the loop. 
 		// We can use a constant here (e.g. 128) 
 		// or the maximum of the x, y and z values of each function.
-		return root->check(dim);
+
+		if (dim != 128)
+			return false;
+
+		return true; //root->check(dim);
 	}
 
 	inline void code(uint32_t dim, Writer &writer)

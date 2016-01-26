@@ -24,7 +24,7 @@ int main(int argc, char **argv)
 
 	Ast ast = parse(fp);
 
-	uint32_t dim = 0;
+	uint32_t dim = 128;
 	bool sem = ast.check(dim);
 	std::cout << "Semantic check OK: " << (sem ? "Yes" : "No") << std::endl;
 	if (!sem)
