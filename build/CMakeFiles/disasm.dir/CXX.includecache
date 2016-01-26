@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../compiler/ops.h
+string
+-
+
+../compiler/util.h
+ostream
+-
+
+/home/yduman/Schreibtisch/Praktikum4-Coderahmen/disasm/main.cc
+cstdio
+-
+iostream
+-
+fstream
+-
+cstdlib
+-
+iomanip
+-
+vector
+-
+ops.h
+/home/yduman/Schreibtisch/Praktikum4-Coderahmen/disasm/ops.h
+util.h
+/home/yduman/Schreibtisch/Praktikum4-Coderahmen/disasm/util.h
+

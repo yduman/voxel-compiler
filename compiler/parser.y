@@ -10,7 +10,7 @@ extern "C" int yylex();
 extern "C" int yyparse();
 extern FILE *yyin;
 extern char *yytext;
-
+ 
 void yyerror(const char *s);
 
 Expr *root;
@@ -18,32 +18,30 @@ Expr *root;
 
 // Custom types (Arg, Args, Fn, Expr) are defined in parser.h
 %union {
-	int  	ival;
-	char* 	sval;
-	Arg* 	argval;
-	Args* 	argsval;
-	Fn*		fnval;
-	Expr*	exprval;
+	int  ival;
+	char *sval;
+	Arg  *argval;
+	Args *argsval;
+	Fn   *fnval;
+	Expr *exprval;
 }
 
 // Task 1 - Define your tokens here
-%token <ival> 	NUM
-%token <ival> 	HEX
-%token <sval> 	NAME
-%token 			BLEFT
-%token 			BRIGHT
-%token 			COMMA	// noetig (?)
-%token 			CONJ
-%token 			DISJ
-%token 			NEG
+%token <ival> NUM
+%token <ival> HEX
+%token <sval> NAME
+%token BLEFT
+%token BRIGHT
+%token COMMA
+%token CONJ
+%token DISJ
+%token NEG
 
 // Task 2 - define your non-terminal types here
 %type <exprval> expr
-%type <fnval> 	fn
 %type <argsval> args 
-%type <argval> 	arg
-%type 			op
-// >>>>>>>>>>>>>>>>> TODO :: CODE HERE !!!! <<<<<<<<<<<<<< //
+%type <argval> arg
+%type <fnval> fn
 %%
 
 parser:
@@ -52,33 +50,30 @@ parser:
 
 // Task 2 - define production rules here
 expr:
-	expr op expr 				{ $$ = new Expr($2, $1, $3); }
+	expr CONJ expr { $$ = new Expr(OP_CONJ, $1, $3); }
 	|
-	op expr 					{ $$ = new Expr($1, $2); }
+	expr DISJ expr { $$ = new Expr(OP_DISJ, $1, $3); }
 	|
-	fn op 						{ $$ = new Expr($2, $1); }
+	NEG expr { $$ = new Expr(OP_NEG, $2); }
 	|
-	fn 							{ ; }
+	fn CONJ { $$ = new Expr(OP_CONJ, $1); }
+	|
+	fn DISJ { $$ = new Expr(OP_DISJ, $1); }
+	|
+	fn NEG 	{ $$ = new Expr(OP_NEG, $1); }
 	;
 fn: 
-	NAME BLEFT args BRIGHT 		{ $$ = new Fn($1, $3); }
+	NAME BLEFT args BRIGHT { $$ = new Fn($1, $3); }
 	;
 args:
-	arg arg arg arg arg 		{ $$ = new Args(); } 
-	| 
-	arg arg arg arg arg arg arg { $$ = new Args(); }
+	args COMMA arg { $$ = new Args(); $$->add($3); }
+	|
+	arg { $$->add($1); }
 	;
 arg: 
-	NUM 						{ $$ = new Arg($1); }
+	NUM { $$ = new Arg($1); }
 	|
-	HEX 						{ $$ = new Arg($1); }
-	;
-op:
-	CONJ 						{ $$ = OP_CONJ; } 
-	|
-	DISJ 						{ $$ = OP_DISJ; }
-	|
-	NEG 						{ $$ = OP_NEG; }
+	HEX { $$ = new Arg($1); }
 	;
 %%
 

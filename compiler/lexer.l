@@ -17,13 +17,13 @@
 
  // Task 1 - add your implementation in between the '%%'s
 %%
-[ \t\r\n]      	; 
+[ \t\r\n]      ; // ignore whitespaces and new lines
 [a-zA-Z0-9]+	{ yylval.sval = strdup(yytext); return NAME; }
 [0-9]+			{ yylval.ival = atoi(yytext); return NUM; }
-[x0-9]+			{ yylval.ival = strtol(yytext, NULL, 0); return HEX; }
+0x[0-9a-f]+		{ yylval.ival = strtol(yytext, NULL, 0); return HEX; }
+","				{ return COMMA; }
 "("				{ return BLEFT; }
 ")"				{ return BRIGHT; }
-","				{ return COMMA; }
 "|"				{ return DISJ; }
 "&"				{ return CONJ; }
 "!"				{ return NEG; }

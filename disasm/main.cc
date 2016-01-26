@@ -122,7 +122,7 @@ int main(int argc, char **argv)
 			uint32_t radius = ops[pc++];
 			uint32_t color = ops[pc++];
 
-			std::cout << "r" << dest << ' ' << x << ' ' << y << ' ' << z << ' ' << radius << " 0x" << std::hex << color << std::dec;
+			std::cout << "r" << dest << ' ' << x << ' ' << y << ' ' << z << ' ' << radius << " 0x" << std::hex << std::setfill('0') << std::setw(6) << color << std::dec;
 			break;
 		}
 		case OP_BOX: {
@@ -135,7 +135,7 @@ int main(int argc, char **argv)
 			uint32_t d = ops[pc++];
 			uint32_t color = ops[pc++];
 
-			std::cout << "r" << dest << ' ' << x << ' ' << y << ' ' << z << ' ' << w << ' ' << h << ' ' << d << " 0x" << std::hex << color << std::dec;
+			std::cout << "r" << dest << ' ' << x << ' ' << y << ' ' << z << ' ' << w << ' ' << h << ' ' << d << " 0x" << std::hex << std::setfill('0') << std::setw(6) << color << std::dec;
 			break;
 		}
 		case OP_HEART: {
@@ -146,7 +146,7 @@ int main(int argc, char **argv)
 			uint32_t radius = ops[pc++];
 			uint32_t color = ops[pc++];
 
-			std::cout << "r" << dest << ' ' << x << ' ' << y << ' ' << z << ' ' << radius << " 0x" << std::hex << color << std::dec;
+			std::cout << "r" << dest << ' ' << x << ' ' << y << ' ' << z << ' ' << radius << " 0x" << std::hex << std::setfill('0') << std::setw(6) << color << std::dec;
 			break;
 		}
 		}

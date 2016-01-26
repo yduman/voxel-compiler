@@ -202,9 +202,9 @@ inline std::ostream &operator<<(std::ostream &os, const Expr &expr)
 		return os << *expr.fn;
 	case OP_NEG:
 		return os << "(!" << *expr.lhs << ")";
-	case OP_CONJ:
-		return os << "(" << *expr.lhs << " | " << *expr.rhs << ")";
 	case OP_DISJ:
+		return os << "(" << *expr.lhs << " | " << *expr.rhs << ")";
+	case OP_CONJ:
 		return os << "(" << *expr.lhs << " & " << *expr.rhs << ")";
 	default:
 		return os;

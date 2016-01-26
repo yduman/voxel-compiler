@@ -13,10 +13,10 @@ inline std::string op2str(int op)
 		return "LOOP";
 	case OP_JUMP:
 		return "JUMP";
-	case OP_CONJ:
-		return "CONJ";
 	case OP_DISJ:
 		return "DISJ";
+	case OP_CONJ:
+		return "CONJ";
 	case OP_SET:
 		return "SET";
 	case OP_NEG:

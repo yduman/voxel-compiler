@@ -43,7 +43,7 @@ void createply(const UIntOt &ot, std::ostream &out)
 		<< "end_header\n";
 	for (int i = 0; i < vertices.size() / 3; ++i) {
 		uint32_t color = colors[i];
-		uint32_t r = (color >> 12) & 0xff, g = (color >> 8) & 0xff, b = color & 0xff;
+		uint32_t r = (color >> 16) & 0xff, g = (color >> 8) & 0xff, b = color & 0xff;
 		out << std::fixed << std::setprecision(1) << (double)vertices[i * 3] << " " << (double)vertices[i * 3 + 1] << " " << (double)vertices[i * 3 + 2] << " " << r << " " << g << " " << b << "\n";
 	}
 	for (int i = 0; i < faces.size() / 3; ++i) {
@@ -124,13 +124,13 @@ int main(int argc, char **argv)
 		case OP_JUMP:
 			pc += 1;
 			break;
-		case OP_CONJ:
+		case OP_DISJ:
 			maxreg = maxreg > ops[pc + 0] ? maxreg : ops[pc + 0];
 			maxreg = maxreg > ops[pc + 1] ? maxreg : ops[pc + 1];
 			maxreg = maxreg > ops[pc + 2] ? maxreg : ops[pc + 2];
 			pc += 3;
 			break;
-		case OP_DISJ:
+		case OP_CONJ:
 			maxreg = maxreg > ops[pc + 0] ? maxreg : ops[pc + 0];
 			maxreg = maxreg > ops[pc + 1] ? maxreg : ops[pc + 1];
 			maxreg = maxreg > ops[pc + 2] ? maxreg : ops[pc + 2];
@@ -232,7 +232,7 @@ int main(int argc, char **argv)
 			pc = offset;
 			break;
 		}
-		case OP_CONJ:
+		case OP_DISJ:
 		{
 			uint32_t dest = ops[pc++];
 			uint32_t lhs = ops[pc++];
@@ -243,7 +243,7 @@ int main(int argc, char **argv)
 			regs[dest] = lhsv != INVALID ? lhsv : rhsv;
 			break;
 		}
-		case OP_DISJ:
+		case OP_CONJ:
 		{
 			uint32_t dest = ops[pc++];
 			uint32_t lhs = ops[pc++];

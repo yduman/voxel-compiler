@@ -23,10 +23,10 @@ inline uint32_t heart(uint32_t e, uint32_t l, uint32_t a, uint32_t mx, uint32_t 
 	// Source: https://anhngq.wordpress.com/2011/11/05/mupad-heart-in-3d/
 	// (x^2+9/4*y^2+z^2-1)^3-x^2*z^3-9/80*y^2*z^3=0
 
-	float x = (float)e - (float)mx, y = (float)l - (float)my, z = (float)a - (float)mz, s = (float)ss;
+	float x = (float)e - (float)mx, y = (float)l - (float)my, z = (float)a - (float)mz, s = (float)ss / 1.237f;
 
 	x /= s; y /= s; z /= s;
 
 	float q = x * x + 9.0f / 4.0f * y * y + z * z - 1;
-	return q * q * q < x * x * z * z * z - 9.0f / 80.0f * y * y * z * z * z ? c : INVALID;
+	return q * q * q - x * x * z * z * z - 9.0f / 80.0f * y * y * z * z * z < 0.0f ? c : INVALID;
 }
