@@ -50,34 +50,43 @@ parser:
 
 // Task 2 - define production rules here
 expr:
+	// ------------------------------------------ //
 	// ------ nicht geklammerte Ausdruecke ------ //
+	// ------------------------------------------ //
 	expr CONJ expr { $$ = new Expr(OP_CONJ, $1, $3); }
 	|
 	expr DISJ expr { $$ = new Expr(OP_DISJ, $1, $3); }
 	|
 	NEG expr { $$ = new Expr(OP_NEG, $2); }
 	|
-	fncall { $$ = new Expr(PLACEHOLDER_FILL_ME, $1) } // TODO :: FIX
+	fncall { $$ = new Expr(OP_SPHERE, $1); } // TODO :: TESTING JUST WITH SPHERES 4 NOW
 	|
-	// ------ geklammerte Ausdruecke ------ //
+	// ------------------------------------------ //
+	// --------- geklammerte Ausdruecke --------- //
+	// ------------------------------------------ //
+	/*
 	BLEFT expr CONJ expr BRIGHT { $$ = new Expr(OP_CONJ, $2, $4); }
 	|
 	BLEFT expr DISJ expr BRIGHT { $$ = new Expr(OP_DISJ, $2, $4); }
 	|
 	BLEFT NEG expr BRIGHT { $$ = new Expr(OP_NEG, $3); }
 	|
-	BLEFT fncall BRIGHT { $$ = new Expr(PLACEHOLDER_FILL_ME, $1) } // TODO :: FIX
+	BLEFT fncall BRIGHT { $$ = new Expr(OP_SPHERE, $2); } // TODO :: TESTING JUST WITH SPHERES 4 NOW
+	*/
 	;
+
 fncall:
 	// Eine Funktion sieht so aus: funktionsNAME ( ARGS )
 	NAME BLEFT args BRIGHT { $$ = new Fn($1, $3); }
 	;
+
 args:
 	// ARGS besteht aus Argumenten (5x arg bei "heart" und "sphere", 7x bei "box")
 	arg COMMA args { $$ = new Args(); $$->add($1); }
 	|
 	arg { $$ = new Args(); $$->add($1); }
 	;
+
 arg:
 	// Ein Argument ist entweder eine ganze Zahl oder eine Hexadezimalzahl
 	NUM { $$ = new Arg($1); }
@@ -86,7 +95,7 @@ arg:
 	;
 %%
 
-// #define LEXER_IMPLEMENTED
+#define LEXER_IMPLEMENTED
 
 Ast parse(FILE *fp)
 {
