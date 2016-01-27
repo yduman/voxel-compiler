@@ -10,7 +10,7 @@ extern "C" int yylex();
 extern "C" int yyparse();
 extern FILE *yyin;
 extern char *yytext;
- 
+
 void yyerror(const char *s);
 
 Expr *root;
@@ -18,12 +18,12 @@ Expr *root;
 
 // Custom types (Arg, Args, Fn, Expr) are defined in parser.h
 %union {
-	int  ival;
-	char *sval;
-	Arg  *argval;
-	Args *argsval;
-	Fn   *fnval;
-	Expr *exprval;
+	int   ival;
+	char* sval;
+	Arg*  argval;
+	Args* argsval;
+	Fn*   fnval;
+	Expr* exprval;
 }
 
 // Task 1 - Define your tokens here
@@ -39,7 +39,7 @@ Expr *root;
 
 // Task 2 - define your non-terminal types here
 %type <exprval> expr
-%type <argsval> args 
+%type <argsval> args
 %type <argval> arg
 %type <fnval> fncall
 %%
@@ -50,40 +50,43 @@ parser:
 
 // Task 2 - define production rules here
 expr:
+	// ------ nicht geklammerte Ausdruecke ------ //
 	expr CONJ expr { $$ = new Expr(OP_CONJ, $1, $3); }
 	|
 	expr DISJ expr { $$ = new Expr(OP_DISJ, $1, $3); }
 	|
 	NEG expr { $$ = new Expr(OP_NEG, $2); }
 	|
-	fncall { ; }
+	fncall { $$ = new Expr(PLACEHOLDER_FILL_ME, $1) } // TODO :: FIX
 	|
+	// ------ geklammerte Ausdruecke ------ //
 	BLEFT expr CONJ expr BRIGHT { $$ = new Expr(OP_CONJ, $2, $4); }
 	|
 	BLEFT expr DISJ expr BRIGHT { $$ = new Expr(OP_DISJ, $2, $4); }
 	|
 	BLEFT NEG expr BRIGHT { $$ = new Expr(OP_NEG, $3); }
 	|
-	BLEFT fncall BRIGHT { ; }
+	BLEFT fncall BRIGHT { $$ = new Expr(PLACEHOLDER_FILL_ME, $1) } // TODO :: FIX
 	;
-fncall: 
+fncall:
+	// Eine Funktion sieht so aus: funktionsNAME ( ARGS )
 	NAME BLEFT args BRIGHT { $$ = new Fn($1, $3); }
 	;
 args:
-	arg COMMA arg COMMA arg COMMA arg COMMA arg { $$ = new Args(); 
-	$$->add($1); $$->add($3); $$->add($5); $$->add($7); $$->add($9); }
+	// ARGS besteht aus Argumenten (5x arg bei "heart" und "sphere", 7x bei "box")
+	arg COMMA args { $$ = new Args(); $$->add($1); }
 	|
-	arg COMMA arg COMMA arg COMMA arg COMMA arg COMMA arg COMMA arg { $$ = new Args();
-	$$->add($1); $$->add($3); $$->add($5); $$->add($7); $$->add($9); $$->add($11); $$->add($13); }
+	arg { $$ = new Args(); $$->add($1); }
 	;
-arg: 
+arg:
+	// Ein Argument ist entweder eine ganze Zahl oder eine Hexadezimalzahl
 	NUM { $$ = new Arg($1); }
 	|
 	HEX { $$ = new Arg($1); }
 	;
 %%
 
-#define LEXER_IMPLEMENTED
+// #define LEXER_IMPLEMENTED
 
 Ast parse(FILE *fp)
 {

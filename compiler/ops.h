@@ -2,7 +2,19 @@
 
 #include <string>
 
-enum Op { OP_DRAW = 0x00, OP_LOOP = 0x01, OP_JUMP = 0x02, OP_CONJ = 0x10, OP_DISJ = 0x11, OP_NEG = 0x12, OP_SET = 0x20, OP_SPHERE = 0xa0, OP_BOX = 0xa1, OP_HEART = 0xa2, OP_FN = 0xff };
+enum Op {
+	OP_DRAW = 0x00,
+	OP_LOOP = 0x01,
+	OP_JUMP = 0x02,
+	OP_CONJ = 0x10,
+	OP_DISJ = 0x11,
+	OP_NEG = 0x12,
+	OP_SET = 0x20,
+	OP_SPHERE = 0xa0,
+	OP_BOX = 0xa1,
+	OP_HEART = 0xa2,
+	OP_FN = 0xff
+};
 
 inline std::string op2str(int op)
 {

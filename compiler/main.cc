@@ -22,7 +22,11 @@ int main(int argc, char **argv)
 		return EXIT_FAILURE;
 	}
 
+	std::cout << "Parsing..." << std::endl;
 	Ast ast = parse(fp);
+	std::cout << "Finished Parsing..." << std::endl;
+	
+	std::cout << "Printing the AST: " << ast << std::endl;
 
 	uint32_t dim = 0;
 	bool sem = ast.check(dim);
@@ -31,8 +35,6 @@ int main(int argc, char **argv)
 		return EXIT_FAILURE;
 
 	std::cout << "Dimensions: " << dim << std::endl;
-
-	std::cout << "Printing the AST: " << ast << std::endl;
 
 	std::ofstream os(argv[2], std::ofstream::binary);
 	Writer writer(os);
