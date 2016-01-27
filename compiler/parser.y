@@ -56,13 +56,13 @@ expr:
 	|
 	NEG expr { $$ = new Expr(OP_NEG, $2); }
 	|
+	fncall { ; }
+	|
 	BLEFT expr CONJ expr BRIGHT { $$ = new Expr(OP_CONJ, $2, $4); }
 	|
 	BLEFT expr DISJ expr BRIGHT { $$ = new Expr(OP_DISJ, $2, $4); }
 	|
 	BLEFT NEG expr BRIGHT { $$ = new Expr(OP_NEG, $3); }
-	|
-	fncall { ; }
 	|
 	BLEFT fncall BRIGHT { ; }
 	;
@@ -71,11 +71,10 @@ fncall:
 	;
 args:
 	arg COMMA arg COMMA arg COMMA arg COMMA arg { $$ = new Args(); 
-		$$->add($1); $$->add($3); $$->add($5); $$->add($7); $$->add($9); }
+	$$->add($1); $$->add($3); $$->add($5); $$->add($7); $$->add($9); }
 	|
-	arg COMMA arg COMMA arg COMMA arg COMMA arg COMMA arg COMMA arg { $$ = new Args(); 
-		$$->add($1); $$->add($3); $$->add($5); $$->add($7); 
-		$$->add($9); $$->add($11); $$->add($13); }
+	arg COMMA arg COMMA arg COMMA arg COMMA arg COMMA arg COMMA arg { $$ = new Args();
+	$$->add($1); $$->add($3); $$->add($5); $$->add($7); $$->add($9); $$->add($11); $$->add($13); }
 	;
 arg: 
 	NUM { $$ = new Arg($1); }

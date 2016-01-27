@@ -108,8 +108,6 @@ struct Fn {
 	inline bool check(uint32_t &dim)
 	{
 		// Task 3 - add your code here
-		if (dim != 128)
-			return false;
 		/*
 		std::cout << "TESTING SIZE" << std::endl;
 		std::cout << args->size() << " = SIIIZZEEEE" << std::endl;
@@ -151,7 +149,7 @@ struct Fn {
 			}
 		}
 		*/
-		return true;
+		return false;
 	}
 
 	inline void code(uint32_t reg, Writer &writer)
@@ -175,10 +173,10 @@ inline std::ostream &operator<<(std::ostream &os, const Fn &fn)
  * This class represents a node in the syntax tree.
  */
 struct Expr {
-	Op op; // operation code
-	Expr *lhs; // left hand argument (optional)
-	Expr *rhs; // right hand argument (optional)
-	Fn *fn; // function (optional)
+	Op op; 		// operation code
+	Expr *lhs; 	// left hand argument (optional)
+	Expr *rhs; 	// right hand argument (optional)
+	Fn *fn; 	// function (optional)
 
 	// unary
 	inline Expr(Op _op, Expr *_lhs) : op(_op), lhs(_lhs), rhs(NULL), fn(NULL)
@@ -226,9 +224,6 @@ struct Expr {
 
 	inline bool check(uint32_t &dim)
 	{	
-		if (dim != 128)
-			return false;
-
 		// Task 3 - add your code here
 		/*
 		if (fn->check(dim) == false) {
@@ -236,7 +231,7 @@ struct Expr {
 			return false;
 		}
 		*/
-		return true;
+		return false;
 	}
 
 	inline uint32_t code(uint32_t reg, Writer &writer)
@@ -296,10 +291,7 @@ struct Ast {
 		// We can use a constant here (e.g. 128) 
 		// or the maximum of the x, y and z values of each function.
 
-		if (dim != 128)
-			return false;
-
-		return true; //root->check(dim);
+		return root->check(dim);
 	}
 
 	inline void code(uint32_t dim, Writer &writer)

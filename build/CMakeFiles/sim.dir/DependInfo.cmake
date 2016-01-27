@@ -4,7 +4,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/yduman/Schreibtisch/Praktikum4-Coderahmen/sim/main.cc" "/home/yduman/Schreibtisch/Praktikum4-Coderahmen/build/CMakeFiles/sim.dir/sim/main.cc.o"
+  "/home/yadu/GdI3_Prak4/sim/main.cc" "/home/yadu/GdI3_Prak4/build/CMakeFiles/sim.dir/sim/main.cc.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 

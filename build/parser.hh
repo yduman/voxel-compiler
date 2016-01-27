@@ -30,8 +30,8 @@
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
 
-#ifndef YY_YY_HOME_YDUMAN_SCHREIBTISCH_PRAKTIKUM4_CODERAHMEN_BUILD_PARSER_HH_INCLUDED
-# define YY_YY_HOME_YDUMAN_SCHREIBTISCH_PRAKTIKUM4_CODERAHMEN_BUILD_PARSER_HH_INCLUDED
+#ifndef YY_YY_HOME_YADU_GDI3_PRAK4_BUILD_PARSER_HH_INCLUDED
+# define YY_YY_HOME_YADU_GDI3_PRAK4_BUILD_PARSER_HH_INCLUDED
 /* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
@@ -71,7 +71,7 @@ union YYSTYPE
 	Fn   *fnval;
 	Expr *exprval;
 
-#line 75 "/home/yduman/Schreibtisch/Praktikum4-Coderahmen/build/parser.hh" /* yacc.c:1909  */
+#line 75 "/home/yadu/GdI3_Prak4/build/parser.hh" /* yacc.c:1909  */
 };
 # define YYSTYPE_IS_TRIVIAL 1
 # define YYSTYPE_IS_DECLARED 1
@@ -82,4 +82,4 @@ extern YYSTYPE yylval;
 
 int yyparse (void);
 
-#endif /* !YY_YY_HOME_YDUMAN_SCHREIBTISCH_PRAKTIKUM4_CODERAHMEN_BUILD_PARSER_HH_INCLUDED  */
+#endif /* !YY_YY_HOME_YADU_GDI3_PRAK4_BUILD_PARSER_HH_INCLUDED  */

@@ -1,6 +1,6 @@
-#line 2 "/home/yduman/Schreibtisch/Praktikum4-Coderahmen/build/lexer.cc"
+#line 2 "/home/yadu/GdI3_Prak4/build/lexer.cc"
 
-#line 4 "/home/yduman/Schreibtisch/Praktikum4-Coderahmen/build/lexer.cc"
+#line 4 "/home/yadu/GdI3_Prak4/build/lexer.cc"
 
 #define  YY_INT_ALIGNED short int
 
@@ -384,7 +384,7 @@ struct yy_trans_info
 static yyconst flex_int16_t yy_accept[20] =
     {   0,
         0,    0,   12,   11,    1,   10,    9,    6,    7,    5,
-        2,    2,    2,    8,    2,    2,    2,    2,    0
+        3,    3,    2,    8,    3,    0,    2,    4,    0
     } ;
 
 static yyconst flex_int32_t yy_ec[256] =
@@ -421,38 +421,38 @@ static yyconst flex_int32_t yy_ec[256] =
 
 static yyconst flex_int32_t yy_meta[14] =
     {   0,
-        1,    1,    1,    1,    1,    1,    1,    2,    2,    2,
-        2,    2,    1
+        1,    1,    1,    1,    1,    1,    1,    2,    2,    3,
+        4,    5,    1
     } ;
 
-static yyconst flex_int16_t yy_base[21] =
+static yyconst flex_int16_t yy_base[23] =
     {   0,
-        0,    0,   27,   28,   28,   28,   28,   28,   28,   28,
-        6,   13,   11,   28,    0,    0,   11,   14,   28,   20
+        0,    0,   22,   24,   24,   24,   24,   24,   24,   24,
+        4,    3,    0,   24,    0,    0,    0,    0,   24,   12,
+       15,   19
     } ;
 
-static yyconst flex_int16_t yy_def[21] =
+static yyconst flex_int16_t yy_def[23] =
     {   0,
        19,    1,   19,   19,   19,   19,   19,   19,   19,   19,
-       19,   11,   12,   19,   12,   13,   20,   20,    0,   19
+       20,   20,   21,   19,   12,   22,   21,   22,    0,   19,
+       19,   19
     } ;
 
-static yyconst flex_int16_t yy_nxt[42] =
+static yyconst flex_int16_t yy_nxt[38] =
     {   0,
         4,    5,    6,    7,    8,    9,   10,   11,   12,   13,
-       13,   13,   14,   15,   15,   16,   16,   17,   16,   16,
-       16,   18,   16,   16,   16,   16,   19,    3,   19,   19,
-       19,   19,   19,   19,   19,   19,   19,   19,   19,   19,
-       19
+       13,   13,   14,   15,   19,   16,   15,   17,   17,   17,
+       18,   19,   18,    3,   19,   19,   19,   19,   19,   19,
+       19,   19,   19,   19,   19,   19,   19
     } ;
 
-static yyconst flex_int16_t yy_chk[42] =
+static yyconst flex_int16_t yy_chk[38] =
     {   0,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,   11,   11,   11,   11,   11,   13,   13,
-       17,   20,   17,   18,   12,   18,    3,   19,   19,   19,
-       19,   19,   19,   19,   19,   19,   19,   19,   19,   19,
-       19
+        1,    1,    1,   20,   12,   11,   20,   21,   21,   21,
+       22,    3,   22,   19,   19,   19,   19,   19,   19,   19,
+       19,   19,   19,   19,   19,   19,   19
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -482,9 +482,10 @@ char *yytext;
 #include "parser.hh"
 #include "util.h"
 
+using namespace std;
 #define YY_DECL extern "C" int yylex()
 // Task 1 - add your implementation in between the '%%'s
-#line 488 "/home/yduman/Schreibtisch/Praktikum4-Coderahmen/build/lexer.cc"
+#line 489 "/home/yadu/GdI3_Prak4/build/lexer.cc"
 
 #define INITIAL 0
 
@@ -671,9 +672,9 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
     
-#line 19 "compiler/lexer.l"
+#line 20 "compiler/lexer.l"
 
-#line 677 "/home/yduman/Schreibtisch/Praktikum4-Coderahmen/build/lexer.cc"
+#line 678 "/home/yadu/GdI3_Prak4/build/lexer.cc"
 
 	if ( !(yy_init) )
 		{
@@ -732,7 +733,7 @@ yy_match:
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 28 );
+		while ( yy_base[yy_current_state] != 24 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -759,60 +760,60 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 /* rule 1 can match eol */
 YY_RULE_SETUP
-#line 20 "compiler/lexer.l"
+#line 21 "compiler/lexer.l"
 ; // ignore whitespaces and new lines
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 21 "compiler/lexer.l"
-{ yylval.sval = strdup(yytext); return NAME; }
+#line 22 "compiler/lexer.l"
+{ yylval.sval = strdup(yytext); cout << "Found NAME: " << yytext << endl; return NAME; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 22 "compiler/lexer.l"
-{ yylval.ival = atoi(yytext); return NUM; }
+#line 23 "compiler/lexer.l"
+{ yylval.ival = atoi(yytext); cout << "Found NUM: " << yytext << endl; return NUM; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 23 "compiler/lexer.l"
-{ yylval.ival = strtol(yytext, NULL, 0); return HEX; }
+#line 24 "compiler/lexer.l"
+{ yylval.ival = strtol(yytext, NULL, 0); cout << "Found HEX: " << yytext << endl; return HEX; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 24 "compiler/lexer.l"
-{ return COMMA; }
+#line 25 "compiler/lexer.l"
+{ cout << "Found COMMA: " << yytext << endl; return COMMA; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 25 "compiler/lexer.l"
-{ return BLEFT; }
+#line 26 "compiler/lexer.l"
+{ cout << "Found BLEFT: " << yytext << endl; return BLEFT; }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 26 "compiler/lexer.l"
-{ return BRIGHT; }
+#line 27 "compiler/lexer.l"
+{ cout << "Found BRIGHT: " << yytext << endl; return BRIGHT; }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 27 "compiler/lexer.l"
-{ return DISJ; }
+#line 28 "compiler/lexer.l"
+{ cout << "Found DISJ: " << yytext << endl; return DISJ; }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 28 "compiler/lexer.l"
-{ return CONJ; }
+#line 29 "compiler/lexer.l"
+{ cout << "Found CONJ: " << yytext << endl; return CONJ; }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 29 "compiler/lexer.l"
-{ return NEG; }
+#line 30 "compiler/lexer.l"
+{ cout << "Found NEG: " << yytext << endl; return NEG; }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 30 "compiler/lexer.l"
+#line 31 "compiler/lexer.l"
 ECHO;
 	YY_BREAK
-#line 816 "/home/yduman/Schreibtisch/Praktikum4-Coderahmen/build/lexer.cc"
+#line 817 "/home/yadu/GdI3_Prak4/build/lexer.cc"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1810,6 +1811,6 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 30 "compiler/lexer.l"
+#line 31 "compiler/lexer.l"
 
 

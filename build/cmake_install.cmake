@@ -1,4 +1,4 @@
-# Install script for directory: /home/yduman/Schreibtisch/Praktikum4-Coderahmen
+# Install script for directory: /home/yadu/GdI3_Prak4
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,7 +38,7 @@ ELSE(CMAKE_INSTALL_COMPONENT)
   SET(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 ENDIF(CMAKE_INSTALL_COMPONENT)
 
-FILE(WRITE "/home/yduman/Schreibtisch/Praktikum4-Coderahmen/build/${CMAKE_INSTALL_MANIFEST}" "")
+FILE(WRITE "/home/yadu/GdI3_Prak4/build/${CMAKE_INSTALL_MANIFEST}" "")
 FOREACH(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  FILE(APPEND "/home/yduman/Schreibtisch/Praktikum4-Coderahmen/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  FILE(APPEND "/home/yadu/GdI3_Prak4/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 ENDFOREACH(file)
