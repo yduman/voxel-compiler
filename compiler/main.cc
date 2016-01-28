@@ -22,13 +22,11 @@ int main(int argc, char **argv)
 		return EXIT_FAILURE;
 	}
 
-	std::cout << "Parsing..." << std::endl;
 	Ast ast = parse(fp);
-	std::cout << "Finished Parsing..." << std::endl;
-	
+
 	std::cout << "Printing the AST: " << ast << std::endl;
 
-	uint32_t dim = 0;
+	uint32_t dim = 128;
 	bool sem = ast.check(dim);
 	std::cout << "Semantic check OK: " << (sem ? "Yes" : "No") << std::endl;
 	if (!sem)

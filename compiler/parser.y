@@ -80,6 +80,7 @@ fncall:
 
 args:
 	// ARGS besteht aus Argumenten (5x arg bei "heart" und "sphere", 7x bei "box")
+	// TODO :: verallgemeinern auf mehrere Args 
 	arg COMMA arg COMMA arg COMMA arg COMMA arg { $$ = new Args();
 	$$->add($1); $$->add($3); $$->add($5); $$->add($7); $$->add($9); }
 	|

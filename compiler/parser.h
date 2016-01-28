@@ -10,6 +10,8 @@
 #include "util.h"
 #include "ops.h"
 
+using namespace std;
+
 #ifdef _WIN32
 #define strdup _strdup
 #endif
@@ -77,8 +79,8 @@ struct Args {
 * This class represents a leaf in the syntax tree
 */
 struct Fn {
-	char *name; // Name of the function
-	Args *args; // Arguments given to this function
+	char* name; // Name of the function
+	Args* args; // Arguments given to this function
 
 	inline Fn(char *_name, Args *_args) : name(_name), args(_args)
 	{
@@ -108,48 +110,35 @@ struct Fn {
 	inline bool check(uint32_t &dim)
 	{
 		// Task 3 - add your code here
-		/*
-		std::cout << "TESTING SIZE" << std::endl;
-		std::cout << args->size() << " = SIIIZZEEEE" << std::endl;
+		std::cout << "++ CHECKING FN ++" << std::endl;
+		cout << this->name << endl;
+		cout << "jawoll" << endl;
 
-		std::cout << "TESTING NAME" << std::endl;
-		std::cout << this->name << " = NAMMMMEEEEE" << std::endl;
-
-		std::cout << "AREA 2" << std::endl;
 
 		// Funktionsnamen pruefen
-		if (strcmp(name, "sphere") != 0) {
-			std::cout << "HELLOOO 2" << std::endl;
-			std::cout << "Invalid Functionname! Use \'sphere\', \'box\' or \'heart\' as names!" << std::endl;
-			return false;
-		}
-
-		if (strcmp(name, "box") != 0) {
-			std::cout << "Invalid Functionname! Use \'sphere\', \'box\' or \'heart\' as names!" << std::endl;
-			return false;
-		}
-
-		if (strcmp(name, "heart") != 0) {
+		if (strcmp(name, "sphere") != 0 || strcmp(name, "box") != 0 || strcmp(name, "heart") != 0)
+		{
 			std::cout << "Invalid Functionname! Use \'sphere\', \'box\' or \'heart\' as names!" << std::endl;
 			return false;
 		}
 
 		// Argumente pruefen
-		if (name == "heart" || name == "sphere") {
+		if (name == "heart" || name == "sphere")
+		{
 			if (args->size() != 5) {
 				std::cout << "Invalid number of args! \'sphere\' or \'heart\' are using FIVE args!" << std::endl;
 				return false;
 			}
 		}
 
-		if (name == "box") {
+		if (name == "box")
+		{
 			if (args->size() != 7) {
 				std::cout << "Invalid number of args! \'box\' is using SEVEN args!" << std::endl;
 				return false;
 			}
 		}
-		*/
-		return false;
+		return true;
 	}
 
 	inline void code(uint32_t reg, Writer &writer)
@@ -223,15 +212,11 @@ struct Expr {
 	inline friend std::ostream &operator<<(std::ostream &os, const Expr &expr);
 
 	inline bool check(uint32_t &dim)
-	{	
+	{
 		// Task 3 - add your code here
-		/*
-		if (fn->check(dim) == false) {
-			std::cout << "Incorrect Function! Check your functions for errors!" << std::endl;
-			return false;
-		}
-		*/
-		return false;
+		std::cout << "++ CHECKING EXPR ++" << std::endl;
+
+		return fn->check(dim);
 	}
 
 	inline uint32_t code(uint32_t reg, Writer &writer)
@@ -287,10 +272,10 @@ struct Ast {
 	inline bool check(uint32_t &dim)
 	{
 		// Task 3 - modify if you can't solve the optional task, see note below.
-		// NOTE: dim is used to determine the dimensions of the loop. 
-		// We can use a constant here (e.g. 128) 
+		// NOTE: dim is used to determine the dimensions of the loop.
+		// We can use a constant here (e.g. 128)
 		// or the maximum of the x, y and z values of each function.
-
+		std::cout << "++ CHECKING AST ++" << std::endl;
 		return root->check(dim);
 	}
 

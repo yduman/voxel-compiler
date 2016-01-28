@@ -455,7 +455,7 @@ static const yytype_uint8 yytranslate[] =
 static const yytype_uint8 yyrline[] =
 {
        0,    48,    48,    56,    58,    60,    62,    67,    69,    71,
-      73,    78,    83,    86,    92,    94
+      73,    78,    84,    87,    93,    95
 };
 #endif
 
@@ -1305,27 +1305,27 @@ yyreduce:
     break;
 
   case 12:
-#line 83 "compiler/parser.y" /* yacc.c:1646  */
+#line 84 "compiler/parser.y" /* yacc.c:1646  */
     { (yyval.argsval) = new Args();
 	(yyval.argsval)->add((yyvsp[-8].argval)); (yyval.argsval)->add((yyvsp[-6].argval)); (yyval.argsval)->add((yyvsp[-4].argval)); (yyval.argsval)->add((yyvsp[-2].argval)); (yyval.argsval)->add((yyvsp[0].argval)); }
 #line 1312 "/home/yadu/GdI3_Prak4/build/parser.cc" /* yacc.c:1646  */
     break;
 
   case 13:
-#line 86 "compiler/parser.y" /* yacc.c:1646  */
+#line 87 "compiler/parser.y" /* yacc.c:1646  */
     { (yyval.argsval) = new Args();
 	(yyval.argsval)->add((yyvsp[-12].argval)); (yyval.argsval)->add((yyvsp[-10].argval)); (yyval.argsval)->add((yyvsp[-8].argval)); (yyval.argsval)->add((yyvsp[-6].argval)); (yyval.argsval)->add((yyvsp[-4].argval)); (yyval.argsval)->add((yyvsp[-2].argval)); (yyval.argsval)->add((yyvsp[0].argval)); }
 #line 1319 "/home/yadu/GdI3_Prak4/build/parser.cc" /* yacc.c:1646  */
     break;
 
   case 14:
-#line 92 "compiler/parser.y" /* yacc.c:1646  */
+#line 93 "compiler/parser.y" /* yacc.c:1646  */
     { (yyval.argval) = new Arg((yyvsp[0].ival)); }
 #line 1325 "/home/yadu/GdI3_Prak4/build/parser.cc" /* yacc.c:1646  */
     break;
 
   case 15:
-#line 94 "compiler/parser.y" /* yacc.c:1646  */
+#line 95 "compiler/parser.y" /* yacc.c:1646  */
     { (yyval.argval) = new Arg((yyvsp[0].ival)); }
 #line 1331 "/home/yadu/GdI3_Prak4/build/parser.cc" /* yacc.c:1646  */
     break;
@@ -1559,7 +1559,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 96 "compiler/parser.y" /* yacc.c:1906  */
+#line 97 "compiler/parser.y" /* yacc.c:1906  */
 
 
 #define LEXER_IMPLEMENTED
