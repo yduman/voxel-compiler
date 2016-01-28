@@ -74,7 +74,7 @@ expr:
 	;
 
 fncall:
-	// Eine Funktion sieht so aus: funktionsNAME ( ARGS )
+	// Eine Funktion sieht so aus: foo ( arg_1 ... arg_n )
 	NAME BLEFT args BRIGHT { $$ = new Fn($1, $3); }
 	;
 

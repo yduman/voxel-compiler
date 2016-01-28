@@ -10,7 +10,6 @@
 #include "util.h"
 #include "ops.h"
 
-using namespace std;
 
 #ifdef _WIN32
 #define strdup _strdup
@@ -110,34 +109,33 @@ struct Fn {
 	inline bool check(uint32_t &dim)
 	{
 		// Task 3 - add your code here
-		std::cout << "++ CHECKING FN ++" << std::endl;
-		cout << this->name << endl;
-		cout << "jawoll" << endl;
+		std::cout << "++ CHECKING FNC ++" << std::endl;
 
-
-		// Funktionsnamen pruefen
-		if (strcmp(name, "sphere") != 0 || strcmp(name, "box") != 0 || strcmp(name, "heart") != 0)
+		if (name != "sphere" || name != "heart" || name != "box")
 		{
-			std::cout << "Invalid Functionname! Use \'sphere\', \'box\' or \'heart\' as names!" << std::endl;
+			printf("your function name was: %s", name);
+			std::cout << "invalid function name!" << std::endl;
 			return false;
 		}
 
-		// Argumente pruefen
-		if (name == "heart" || name == "sphere")
+		if (name == "sphere" || name == "heart")
 		{
-			if (args->size() != 5) {
-				std::cout << "Invalid number of args! \'sphere\' or \'heart\' are using FIVE args!" << std::endl;
+			if (args->size() != 5)
+			{
+				std::cout << "invalid number of arguments!" << std::endl;
 				return false;
 			}
 		}
 
 		if (name == "box")
 		{
-			if (args->size() != 7) {
-				std::cout << "Invalid number of args! \'box\' is using SEVEN args!" << std::endl;
+			if (args->size() != 7)
+			{
+				std::cout << "invalid number of arguments!" << std::endl;
 				return false;
 			}
 		}
+
 		return true;
 	}
 
@@ -165,7 +163,7 @@ struct Expr {
 	Op op; 		// operation code
 	Expr *lhs; 	// left hand argument (optional)
 	Expr *rhs; 	// right hand argument (optional)
-	Fn *fn; 	// function (optional)
+	Fn *fn; 	   // function (optional)
 
 	// unary
 	inline Expr(Op _op, Expr *_lhs) : op(_op), lhs(_lhs), rhs(NULL), fn(NULL)
@@ -214,8 +212,7 @@ struct Expr {
 	inline bool check(uint32_t &dim)
 	{
 		// Task 3 - add your code here
-		std::cout << "++ CHECKING EXPR ++" << std::endl;
-
+		std::cout << "++ CHECKING EXP ++" << std::endl;
 		return fn->check(dim);
 	}
 
@@ -276,7 +273,11 @@ struct Ast {
 		// We can use a constant here (e.g. 128)
 		// or the maximum of the x, y and z values of each function.
 		std::cout << "++ CHECKING AST ++" << std::endl;
-		return root->check(dim);
+
+		dim = 128;
+		if (root)
+			return root->check(dim);
+		return false;
 	}
 
 	inline void code(uint32_t dim, Writer &writer)
