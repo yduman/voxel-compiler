@@ -59,20 +59,18 @@ expr:
 	|
 	NEG expr { $$ = new Expr(OP_NEG, $2); }
 	|
-	fncall { $$ = new Expr(OP_SPHERE, $1); } // TODO :: TESTING JUST WITH SPHERES 4 NOW
+	fncall { $$ = new Expr(OP_FN, $1); }
 	|
 	// ------------------------------------------ //
 	// --------- geklammerte Ausdruecke --------- //
 	// ------------------------------------------ //
-	/*
 	BLEFT expr CONJ expr BRIGHT { $$ = new Expr(OP_CONJ, $2, $4); }
 	|
 	BLEFT expr DISJ expr BRIGHT { $$ = new Expr(OP_DISJ, $2, $4); }
 	|
 	BLEFT NEG expr BRIGHT { $$ = new Expr(OP_NEG, $3); }
 	|
-	BLEFT fncall BRIGHT { $$ = new Expr(OP_SPHERE, $2); } // TODO :: TESTING JUST WITH SPHERES 4 NOW
-	*/
+	BLEFT fncall BRIGHT { $$ = new Expr(OP_FN, $2); }
 	;
 
 fncall:
@@ -82,9 +80,11 @@ fncall:
 
 args:
 	// ARGS besteht aus Argumenten (5x arg bei "heart" und "sphere", 7x bei "box")
-	arg COMMA args { $$ = new Args(); $$->add($1); }
+	arg COMMA arg COMMA arg COMMA arg COMMA arg { $$ = new Args();
+	$$->add($1); $$->add($3); $$->add($5); $$->add($7); $$->add($9); }
 	|
-	arg { $$ = new Args(); $$->add($1); }
+	arg COMMA arg COMMA arg COMMA arg COMMA arg COMMA arg COMMA arg { $$ = new Args();
+	$$->add($1); $$->add($3); $$->add($5); $$->add($7); $$->add($9); $$->add($11); $$->add($13); }
 	;
 
 arg:

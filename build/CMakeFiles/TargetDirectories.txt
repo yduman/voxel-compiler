@@ -1,0 +1,3 @@
+/home/yadu/GdI3_Prak4/build/CMakeFiles/compiler.dir
+/home/yadu/GdI3_Prak4/build/CMakeFiles/disasm.dir
+/home/yadu/GdI3_Prak4/build/CMakeFiles/sim.dir
