@@ -140,6 +140,9 @@ struct Fn {
 
 	inline void code(uint32_t reg, Writer &writer)
 	{
+		if (name == "sphere") {
+			writer << OP_SPHERE << reg << args[0] << args[1] << args[2] << args[3] << args[4];
+		}
 
 	}
 };
@@ -223,16 +226,9 @@ struct Expr {
 	inline uint32_t code(uint32_t reg, Writer &writer)
 	{
 		// Task 5 - add your code here
-		if (op == OP_CONJ || op == OP_DISJ) {
-			uint32_t left_code = lhs->code(reg, writer);
-			uint32_t right_code = rhs->code(reg, writer);
-			reg = left_code + right_code;
-		} else if (op == OP_NEG) {
-			return lhs->code(0, writer); // Negation set Color to 0x0
-		} else {
-			fn->code(0, writer);
-		}
-
+		// rekursiver Durchlauf
+		// berechenen fn
+		// dieser farbwert wird returned
 		return reg;
 	}
 };
