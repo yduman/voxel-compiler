@@ -140,7 +140,7 @@ struct Fn {
 
 	inline void code(uint32_t reg, Writer &writer)
 	{
-		// Task 5 - add your code here
+
 	}
 };
 
@@ -211,7 +211,6 @@ struct Expr {
 	inline bool check(uint32_t &dim)
 	{
 		// Task 3 - add your code here
-
 		if (op == 0x10 || op == 0x11) {
 			return lhs->check(dim) && rhs->check(dim);
 		} else if (op == 0x12) {
@@ -224,6 +223,16 @@ struct Expr {
 	inline uint32_t code(uint32_t reg, Writer &writer)
 	{
 		// Task 5 - add your code here
+		if (op == OP_CONJ || op == OP_DISJ) {
+			uint32_t left_code = lhs->code(reg, writer);
+			uint32_t right_code = rhs->code(reg, writer);
+			reg = left_code + right_code;
+		} else if (op == OP_NEG) {
+			return lhs->code(0, writer); // Negation set Color to 0x0
+		} else {
+			fn->code(0, writer);
+		}
+
 		return reg;
 	}
 };
