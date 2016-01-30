@@ -21,7 +21,7 @@ using namespace std;
 [ \t\r\n]      ;
 [a-zA-Z]+		{ yylval.sval = strdup(yytext); return NAME; }
 [0-9]+			{ yylval.ival = atoi(yytext); return NUM; }
-0x[0-9a-f]+	{ yylval.ival = strtol(yytext, NULL, 0); return HEX; }
+0x[0-9a-f]+		{ yylval.ival = strtol(yytext, NULL, 0); return HEX; }
 "," { return COMMA; }
 "("	{ return BLEFT; }
 ")"	{ return BRIGHT; }

@@ -6,6 +6,8 @@
 #include "util.h"
 #include "parser.h"
 
+using namespace std;
+
 extern "C" int yylex();
 extern "C" int yyparse();
 extern FILE *yyin;
@@ -61,6 +63,8 @@ expr:
 	|
 	fncall { $$ = new Expr(OP_FN, $1); }
 	|
+
+
 	// ------------------------------------------ //
 	// --------- geklammerte Ausdruecke --------- //
 	// ------------------------------------------ //
@@ -80,7 +84,7 @@ fncall:
 
 args:
 	// ARGS besteht aus Argumenten (5x arg bei "heart" und "sphere", 7x bei "box")
-	// TODO :: verallgemeinern auf mehrere Args 
+	// TODO :: verallgemeinern auf mehrere Args
 	arg COMMA arg COMMA arg COMMA arg COMMA arg { $$ = new Args();
 	$$->add($1); $$->add($3); $$->add($5); $$->add($7); $$->add($9); }
 	|

@@ -109,11 +109,10 @@ struct Fn {
 	inline bool check(uint32_t &dim)
 	{
 		// Task 3 - add your code here
-		std::cout << "++ CHECKING FNC ++" << std::endl;
 
-		if (name != "sphere" || name != "heart" || name != "box")
+		if (strcmp(name, "sphere") != 0 && strcmp(name, "heart") != 0 && strcmp(name, "box") != 0)
 		{
-			printf("your function name was: %s", name);
+			printf("your function name was: %s\n", name);
 			std::cout << "invalid function name!" << std::endl;
 			return false;
 		}
@@ -212,8 +211,14 @@ struct Expr {
 	inline bool check(uint32_t &dim)
 	{
 		// Task 3 - add your code here
-		std::cout << "++ CHECKING EXP ++" << std::endl;
-		return fn->check(dim);
+
+		if (op == 0x10 || op == 0x11) {
+			return lhs->check(dim) && rhs->check(dim);
+		} else if (op == 0x12) {
+			return lhs->check(dim);
+		} else {
+			return fn->check(dim);
+		}
 	}
 
 	inline uint32_t code(uint32_t reg, Writer &writer)
@@ -272,12 +277,7 @@ struct Ast {
 		// NOTE: dim is used to determine the dimensions of the loop.
 		// We can use a constant here (e.g. 128)
 		// or the maximum of the x, y and z values of each function.
-		std::cout << "++ CHECKING AST ++" << std::endl;
-
-		dim = 128;
-		if (root)
-			return root->check(dim);
-		return false;
+		return root->check(dim);
 	}
 
 	inline void code(uint32_t dim, Writer &writer)
