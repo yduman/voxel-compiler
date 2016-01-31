@@ -1,0 +1,12 @@
+box(6, 4, 11, 1, 3, 1, 0x0) | (box(8, 4, 11, 1, 3, 1, 0x0) | ((
+    ((
+        (
+            (sphere(7, 7, 14, 3, 0xce0c02) |
+            sphere(1, 10, 10, 3, 0xce0c02) | sphere(13, 10, 10, 3, 0xce0c02) |
+            sphere(2, 7, 4, 3, 0xce0c02) | sphere(12, 7, 4, 3, 0xce0c02) |
+            sphere(7, 10, 0, 3, 0xce0c02) |
+            sphere(7, 13, 12, 3, 0xce0c02) | sphere(4, 14, 5, 3, 0xce0c02) | sphere(10, 14, 5, 3, 0xce0c02)
+        ) & sphere(7, 7, 7, 7, 0xf38c1d)) |
+        sphere(7, 7, 7, 7, 0xf38c1d)
+    ) & !box(0, 0, 0, 15, 6, 15, 0x0)) & (!sphere(7, 7, 7, 6, 0x0) & !box(0, 7, 0, 15, 6, 15, 0x0))
+) | sphere(7, 5, 7, 5, 0xffffff)))
