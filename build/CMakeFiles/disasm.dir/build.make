@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yduman/GdI3_Prak4
+CMAKE_SOURCE_DIR = /home/yadu/GdI3_Prak4
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yduman/GdI3_Prak4/build
+CMAKE_BINARY_DIR = /home/yadu/GdI3_Prak4/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/disasm.dir/depend.make
@@ -51,17 +51,17 @@ include CMakeFiles/disasm.dir/flags.make
 
 CMakeFiles/disasm.dir/disasm/main.cc.o: CMakeFiles/disasm.dir/flags.make
 CMakeFiles/disasm.dir/disasm/main.cc.o: ../disasm/main.cc
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/yduman/GdI3_Prak4/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/yadu/GdI3_Prak4/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/disasm.dir/disasm/main.cc.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/disasm.dir/disasm/main.cc.o -c /home/yduman/GdI3_Prak4/disasm/main.cc
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/disasm.dir/disasm/main.cc.o -c /home/yadu/GdI3_Prak4/disasm/main.cc
 
 CMakeFiles/disasm.dir/disasm/main.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/disasm.dir/disasm/main.cc.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/yduman/GdI3_Prak4/disasm/main.cc > CMakeFiles/disasm.dir/disasm/main.cc.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/yadu/GdI3_Prak4/disasm/main.cc > CMakeFiles/disasm.dir/disasm/main.cc.i
 
 CMakeFiles/disasm.dir/disasm/main.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/disasm.dir/disasm/main.cc.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/yduman/GdI3_Prak4/disasm/main.cc -o CMakeFiles/disasm.dir/disasm/main.cc.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/yadu/GdI3_Prak4/disasm/main.cc -o CMakeFiles/disasm.dir/disasm/main.cc.s
 
 CMakeFiles/disasm.dir/disasm/main.cc.o.requires:
 .PHONY : CMakeFiles/disasm.dir/disasm/main.cc.o.requires
@@ -97,6 +97,6 @@ CMakeFiles/disasm.dir/clean:
 .PHONY : CMakeFiles/disasm.dir/clean
 
 CMakeFiles/disasm.dir/depend:
-	cd /home/yduman/GdI3_Prak4/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yduman/GdI3_Prak4 /home/yduman/GdI3_Prak4 /home/yduman/GdI3_Prak4/build /home/yduman/GdI3_Prak4/build /home/yduman/GdI3_Prak4/build/CMakeFiles/disasm.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/yadu/GdI3_Prak4/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yadu/GdI3_Prak4 /home/yadu/GdI3_Prak4 /home/yadu/GdI3_Prak4/build /home/yadu/GdI3_Prak4/build /home/yadu/GdI3_Prak4/build/CMakeFiles/disasm.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/disasm.dir/depend
 

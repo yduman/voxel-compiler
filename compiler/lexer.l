@@ -19,9 +19,9 @@ using namespace std;
  // Task 1 - add your implementation in between the '%%'s
 %%
 [ \t\r\n]      ;
-[a-zA-Z]+		{ yylval.sval = strdup(yytext); return NAME; }
 [0-9]+			{ yylval.ival = atoi(yytext); return NUM; }
 0x[0-9a-f]+		{ yylval.ival = strtol(yytext, NULL, 0); return HEX; }
+[a-zA-Z0-9]+	{ yylval.sval = strdup(yytext); return NAME; }
 "," { return COMMA; }
 "("	{ return BLEFT; }
 ")"	{ return BRIGHT; }

@@ -10,8 +10,6 @@
 #include "util.h"
 #include "ops.h"
 
-#define INVALID_COLOR 0x1000000
-
 
 #ifdef _WIN32
 #define strdup _strdup
@@ -96,35 +94,43 @@ struct Fn {
 
     inline friend std::ostream &operator<<(std::ostream &os, const Fn &expr);
 
-    inline bool check(uint32_t &dim) {
-        // Task 3 - add your code here
-
+    /**
+     * checkt, ob die Sprache gueltige Funktionsnamen und die korrekte Anzahl an Argumenten enthaelt
+     */
+    inline bool check(uint32_t &dim)
+    {
+        // nur die Funktionsnamen 'sphere', 'heart' und 'box' sind gueltig
         if (strcmp(name, "sphere") != 0 && strcmp(name, "heart") != 0 && strcmp(name, "box") != 0) {
             std::cout << "your function name was ==> " << name << std::endl;
-            std::cout << "invalid function name!" << std::endl;
+            std::cout << "this is an invalid function name!" << std::endl;
             std::cout << "valid function names are: " << std::endl;
             std::cout << "--> sphere\n--> heart\n--> box" << std::endl;
             return false;
         }
 
+        // 'sphere' und 'heart' benoetigen immer 5 Argumente
         if (strcmp(name, "sphere") == 0 || strcmp(name, "heart") == 0) {
             if (args->size() != 5) {
-                std::cout << "invalid number of arguments for ==> " << name << std::endl;
-                std::cout << "valid number of arguments for " << name << " is 5!" << std::endl;
+                std::cout << "invalid number of arguments for function ==> " << name << std::endl;
+                std::cout << "valid number of arguments for function " <<  name << " is 5!" << std::endl;
                 return false;
             }
         }
 
+        // 'box' benoetigt immer 7 Argumente
         if (strcmp(name, "box") == 0) {
             if (args->size() != 7) {
-                std::cout << "invalid number of arguments for ==> " << name << std::endl;
-                std::cout << "valid number of arguments for " << name << " is 7!" << std::endl;
+                std::cout << "invalid number of arguments for function ==> " << name << std::endl;
+                std::cout << "valid number of arguments for function " << name << " is 7!" << std::endl;
                 return false;
             }
         }
         return true;
     }
 
+    /**
+     * schreibt den Assemblercode fuer die jeweiligen Funktionen
+     */
     inline void code(uint32_t reg, Writer &writer) {
         if (strcmp(name, "sphere") == 0) {
             writer << OP_SPHERE << reg << args->operator[](0) << args->operator[](1) << args->operator[](2) <<
@@ -201,20 +207,27 @@ struct Expr {
 
     inline friend std::ostream &operator<<(std::ostream &os, const Expr &expr);
 
-    inline bool check(uint32_t &dim) {
-        // Task 3 - add your code here
-        if (op == OP_CONJ || op == OP_DISJ) {
+    /**
+     * rekursiver Aufruf von check, der den ganzen Baum durchlaeuft
+     */
+    inline bool check(uint32_t &dim)
+    {
+        if (op == OP_CONJ || op == OP_DISJ) {           // binaerer Fall
             return lhs->check(dim) && rhs->check(dim);
-        } else if (op == OP_NEG) {
+        } else if (op == OP_NEG) {                      // unaerer Fall
             return lhs->check(dim);
         } else {
-            return fn->check(dim);
+            return fn->check(dim);                      // ansonsten haben wir eine Funktion
         }
     }
 
-    inline uint32_t code(uint32_t reg, Writer &writer) {
-        // Task 5 - add your code here
-        if (op == OP_CONJ || op == OP_DISJ) {
+    /**
+     * Baum wird rekursiv fuer die Codegenerierung travesiert
+     */
+    inline uint32_t code(uint32_t reg, Writer &writer)
+    {
+        if (op == OP_CONJ || op == OP_DISJ)
+        {
             uint32_t reg_left = lhs->code(reg, writer);
             uint32_t reg_right = rhs->code(reg_left + 1, writer);
             reg = reg_right + 1;
@@ -225,13 +238,15 @@ struct Expr {
                 writer << OP_DISJ << reg << reg_left << reg_right;
             }
         }
-        else if (op == OP_NEG) {
+        else if (op == OP_NEG)
+        {
             uint32_t reg_left = lhs->code(reg, writer);
             reg = reg_left + 1;
 
             writer << OP_NEG << reg << reg_left;
         }
-        else {
+        else
+        {
             fn->code(reg, writer);
         }
 
@@ -278,16 +293,14 @@ struct Ast {
 
     inline friend std::ostream &operator<<(std::ostream &os, const Ast &ast);
 
-    inline bool check(uint32_t &dim) {
-        // Task 3 - modify if you can't solve the optional task, see note below.
-        // NOTE: dim is used to determine the dimensions of the loop.
-        // We can use a constant here (e.g. 128)
-        // or the maximum of the x, y and z values of each function.
+    inline bool check(uint32_t &dim)
+    {
+        // die Konstante dim = 128 ist in der main definiert
         return root->check(dim);
     }
 
-    inline void code(uint32_t dim, Writer &writer) {
-        // Task 5
+    inline void code(uint32_t dim, Writer &writer)
+    {
         writer << OP_LOOP << static_cast<uint32_t>(-1) << 0 << 0 << 0 << dim << dim << dim;
         uint32_t reg = root->code(0, writer);
         writer << OP_DRAW << reg;

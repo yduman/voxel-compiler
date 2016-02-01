@@ -82,7 +82,7 @@ void yyerror(const char *s);
 
 Expr *root;
 
-#line 86 "/home/yduman/GdI3_Prak4/build/parser.cc" /* yacc.c:339  */
+#line 86 "/home/yadu/GdI3_Prak4/build/parser.cc" /* yacc.c:339  */
 
 # ifndef YY_NULLPTR
 #  if defined __cplusplus && 201103L <= __cplusplus
@@ -102,8 +102,8 @@ Expr *root;
 
 /* In a future release of Bison, this section will be replaced
    by #include "parser.hh".  */
-#ifndef YY_YY_HOME_YDUMAN_GDI3_PRAK4_BUILD_PARSER_HH_INCLUDED
-# define YY_YY_HOME_YDUMAN_GDI3_PRAK4_BUILD_PARSER_HH_INCLUDED
+#ifndef YY_YY_HOME_YADU_GDI3_PRAK4_BUILD_PARSER_HH_INCLUDED
+# define YY_YY_HOME_YADU_GDI3_PRAK4_BUILD_PARSER_HH_INCLUDED
 /* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
@@ -143,7 +143,7 @@ union YYSTYPE
 	Fn*   fnval;
 	Expr* exprval;
 
-#line 147 "/home/yduman/GdI3_Prak4/build/parser.cc" /* yacc.c:355  */
+#line 147 "/home/yadu/GdI3_Prak4/build/parser.cc" /* yacc.c:355  */
 };
 # define YYSTYPE_IS_TRIVIAL 1
 # define YYSTYPE_IS_DECLARED 1
@@ -154,11 +154,11 @@ extern YYSTYPE yylval;
 
 int yyparse (void);
 
-#endif /* !YY_YY_HOME_YDUMAN_GDI3_PRAK4_BUILD_PARSER_HH_INCLUDED  */
+#endif /* !YY_YY_HOME_YADU_GDI3_PRAK4_BUILD_PARSER_HH_INCLUDED  */
 
 /* Copy the second part of user declarations.  */
 
-#line 162 "/home/yduman/GdI3_Prak4/build/parser.cc" /* yacc.c:358  */
+#line 162 "/home/yadu/GdI3_Prak4/build/parser.cc" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -400,7 +400,7 @@ union yyalloc
 /* YYFINAL -- State number of the termination state.  */
 #define YYFINAL  12
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   45
+#define YYLAST   36
 
 /* YYNTOKENS -- Number of terminals.  */
 #define YYNTOKENS  12
@@ -409,7 +409,7 @@ union yyalloc
 /* YYNRULES -- Number of rules.  */
 #define YYNRULES  15
 /* YYNSTATES -- Number of states.  */
-#define YYNSTATES  43
+#define YYNSTATES  33
 
 /* YYTRANSLATE[YYX] -- Symbol number corresponding to YYX as returned
    by yylex, with out-of-bounds checking.  */
@@ -457,7 +457,7 @@ static const yytype_uint8 yytranslate[] =
 static const yytype_uint8 yyrline[] =
 {
        0,    50,    50,    58,    60,    62,    64,    71,    73,    75,
-      77,    82,    88,    91,    97,    99
+      77,    82,    88,    90,    95,    97
 };
 #endif
 
@@ -482,10 +482,10 @@ static const yytype_uint16 yytoknum[] =
 };
 # endif
 
-#define YYPACT_NINF -14
+#define YYPACT_NINF -6
 
 #define yypact_value_is_default(Yystate) \
-  (!!((Yystate) == (-14)))
+  (!!((Yystate) == (-6)))
 
 #define YYTABLE_NINF -1
 
@@ -496,11 +496,10 @@ static const yytype_uint16 yytoknum[] =
      STATE-NUM.  */
 static const yytype_int8 yypact[] =
 {
-      -3,     1,    -1,    -3,     9,    26,   -14,    34,    -3,    30,
-       8,    26,   -14,    -3,    -3,   -14,   -14,    14,    15,     7,
-      -3,    -3,   -14,    26,    26,   -14,    34,   -14,    20,    24,
-      17,   -14,   -14,    34,    33,    34,    35,    34,    36,    34,
-      37,    34,   -14
+      -3,     1,    -1,    -3,     9,    19,    -6,    27,    -3,    23,
+       7,    19,    -6,    -3,    -3,    -6,    -6,    28,    -6,     6,
+      -3,    -3,    -6,    19,    19,    -6,    27,    -6,    13,    17,
+      -6,    -6,    -6
 };
 
   /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -509,16 +508,15 @@ static const yytype_int8 yypact[] =
 static const yytype_uint8 yydefact[] =
 {
        0,     0,     0,     0,     0,     2,     6,     0,     0,     0,
-       6,     5,     1,     0,     0,    14,    15,     0,     0,     0,
+       6,     5,     1,     0,     0,    14,    15,     0,    13,     0,
        0,     0,    10,     3,     4,    11,     0,     9,     0,     0,
-       0,     7,     8,     0,     0,     0,     0,     0,    12,     0,
-       0,     0,    13
+      12,     7,     8
 };
 
   /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-     -14,   -14,    -2,    40,   -14,   -13
+      -6,    -6,    -2,    15,    -6,    -5
 };
 
   /* YYDEFGOTO[NTERM-NUM].  */
@@ -533,19 +531,17 @@ static const yytype_int8 yydefgoto[] =
 static const yytype_uint8 yytable[] =
 {
        9,    11,     1,     2,     1,     2,    19,     7,     3,    12,
-       8,    23,    24,    30,    27,    22,    13,    14,    28,    29,
-      34,    25,    36,    26,    38,    33,    40,    31,    42,    13,
-      14,    32,     0,    13,    14,    13,    14,    15,    16,    20,
-      21,    35,    10,    37,    39,    41
+       8,    23,    24,    27,    22,    13,    14,    10,    28,    29,
+      31,    30,    13,    14,    32,     0,    13,    14,    13,    14,
+      15,    16,    20,    21,     0,    25,    26
 };
 
 static const yytype_int8 yycheck[] =
 {
        2,     3,     5,     6,     5,     6,     8,     6,    11,     0,
-      11,    13,    14,    26,     7,     7,     9,    10,    20,    21,
-      33,     7,    35,     8,    37,     8,    39,     7,    41,     9,
-      10,     7,    -1,     9,    10,     9,    10,     3,     4,     9,
-      10,     8,     2,     8,     8,     8
+      11,    13,    14,     7,     7,     9,    10,     2,    20,    21,
+       7,    26,     9,    10,     7,    -1,     9,    10,     9,    10,
+       3,     4,     9,    10,    -1,     7,     8
 };
 
   /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
@@ -555,8 +551,7 @@ static const yytype_uint8 yystos[] =
        0,     5,     6,    11,    13,    14,    15,     6,    11,    14,
       15,    14,     0,     9,    10,     3,     4,    16,    17,    14,
        9,    10,     7,    14,    14,     7,     8,     7,    14,    14,
-      17,     7,     7,     8,    17,     8,    17,     8,    17,     8,
-      17,     8,    17
+      17,     7,     7
 };
 
   /* YYR1[YYN] -- Symbol number of symbol that rule YYN derives.  */
@@ -570,7 +565,7 @@ static const yytype_uint8 yyr1[] =
 static const yytype_uint8 yyr2[] =
 {
        0,     2,     1,     3,     3,     2,     1,     5,     5,     4,
-       3,     4,     9,    13,     1,     1
+       3,     4,     3,     1,     1,     1
 };
 
 
@@ -1249,91 +1244,89 @@ yyreduce:
         case 2:
 #line 50 "compiler/parser.y" /* yacc.c:1646  */
     { root = (yyvsp[0].exprval); }
-#line 1253 "/home/yduman/GdI3_Prak4/build/parser.cc" /* yacc.c:1646  */
+#line 1248 "/home/yadu/GdI3_Prak4/build/parser.cc" /* yacc.c:1646  */
     break;
 
   case 3:
 #line 58 "compiler/parser.y" /* yacc.c:1646  */
     { (yyval.exprval) = new Expr(OP_CONJ, (yyvsp[-2].exprval), (yyvsp[0].exprval)); }
-#line 1259 "/home/yduman/GdI3_Prak4/build/parser.cc" /* yacc.c:1646  */
+#line 1254 "/home/yadu/GdI3_Prak4/build/parser.cc" /* yacc.c:1646  */
     break;
 
   case 4:
 #line 60 "compiler/parser.y" /* yacc.c:1646  */
     { (yyval.exprval) = new Expr(OP_DISJ, (yyvsp[-2].exprval), (yyvsp[0].exprval)); }
-#line 1265 "/home/yduman/GdI3_Prak4/build/parser.cc" /* yacc.c:1646  */
+#line 1260 "/home/yadu/GdI3_Prak4/build/parser.cc" /* yacc.c:1646  */
     break;
 
   case 5:
 #line 62 "compiler/parser.y" /* yacc.c:1646  */
     { (yyval.exprval) = new Expr(OP_NEG, (yyvsp[0].exprval)); }
-#line 1271 "/home/yduman/GdI3_Prak4/build/parser.cc" /* yacc.c:1646  */
+#line 1266 "/home/yadu/GdI3_Prak4/build/parser.cc" /* yacc.c:1646  */
     break;
 
   case 6:
 #line 64 "compiler/parser.y" /* yacc.c:1646  */
     { (yyval.exprval) = new Expr(OP_FN, (yyvsp[0].fnval)); }
-#line 1277 "/home/yduman/GdI3_Prak4/build/parser.cc" /* yacc.c:1646  */
+#line 1272 "/home/yadu/GdI3_Prak4/build/parser.cc" /* yacc.c:1646  */
     break;
 
   case 7:
 #line 71 "compiler/parser.y" /* yacc.c:1646  */
     { (yyval.exprval) = new Expr(OP_CONJ, (yyvsp[-3].exprval), (yyvsp[-1].exprval)); }
-#line 1283 "/home/yduman/GdI3_Prak4/build/parser.cc" /* yacc.c:1646  */
+#line 1278 "/home/yadu/GdI3_Prak4/build/parser.cc" /* yacc.c:1646  */
     break;
 
   case 8:
 #line 73 "compiler/parser.y" /* yacc.c:1646  */
     { (yyval.exprval) = new Expr(OP_DISJ, (yyvsp[-3].exprval), (yyvsp[-1].exprval)); }
-#line 1289 "/home/yduman/GdI3_Prak4/build/parser.cc" /* yacc.c:1646  */
+#line 1284 "/home/yadu/GdI3_Prak4/build/parser.cc" /* yacc.c:1646  */
     break;
 
   case 9:
 #line 75 "compiler/parser.y" /* yacc.c:1646  */
     { (yyval.exprval) = new Expr(OP_NEG, (yyvsp[-1].exprval)); }
-#line 1295 "/home/yduman/GdI3_Prak4/build/parser.cc" /* yacc.c:1646  */
+#line 1290 "/home/yadu/GdI3_Prak4/build/parser.cc" /* yacc.c:1646  */
     break;
 
   case 10:
 #line 77 "compiler/parser.y" /* yacc.c:1646  */
     { (yyval.exprval) = new Expr(OP_FN, (yyvsp[-1].fnval)); }
-#line 1301 "/home/yduman/GdI3_Prak4/build/parser.cc" /* yacc.c:1646  */
+#line 1296 "/home/yadu/GdI3_Prak4/build/parser.cc" /* yacc.c:1646  */
     break;
 
   case 11:
 #line 82 "compiler/parser.y" /* yacc.c:1646  */
     { (yyval.fnval) = new Fn((yyvsp[-3].sval), (yyvsp[-1].argsval)); }
-#line 1307 "/home/yduman/GdI3_Prak4/build/parser.cc" /* yacc.c:1646  */
+#line 1302 "/home/yadu/GdI3_Prak4/build/parser.cc" /* yacc.c:1646  */
     break;
 
   case 12:
 #line 88 "compiler/parser.y" /* yacc.c:1646  */
-    { (yyval.argsval) = new Args();
-	(yyval.argsval)->add((yyvsp[-8].argval)); (yyval.argsval)->add((yyvsp[-6].argval)); (yyval.argsval)->add((yyvsp[-4].argval)); (yyval.argsval)->add((yyvsp[-2].argval)); (yyval.argsval)->add((yyvsp[0].argval)); }
-#line 1314 "/home/yduman/GdI3_Prak4/build/parser.cc" /* yacc.c:1646  */
+    { Args *list = (yyvsp[-2].argsval); list->add((yyvsp[0].argval)); (yyval.argsval) = list; }
+#line 1308 "/home/yadu/GdI3_Prak4/build/parser.cc" /* yacc.c:1646  */
     break;
 
   case 13:
-#line 91 "compiler/parser.y" /* yacc.c:1646  */
-    { (yyval.argsval) = new Args();
-	(yyval.argsval)->add((yyvsp[-12].argval)); (yyval.argsval)->add((yyvsp[-10].argval)); (yyval.argsval)->add((yyvsp[-8].argval)); (yyval.argsval)->add((yyvsp[-6].argval)); (yyval.argsval)->add((yyvsp[-4].argval)); (yyval.argsval)->add((yyvsp[-2].argval)); (yyval.argsval)->add((yyvsp[0].argval)); }
-#line 1321 "/home/yduman/GdI3_Prak4/build/parser.cc" /* yacc.c:1646  */
+#line 90 "compiler/parser.y" /* yacc.c:1646  */
+    { Args *list = new Args(); list->add((yyvsp[0].argval)); (yyval.argsval) = list; }
+#line 1314 "/home/yadu/GdI3_Prak4/build/parser.cc" /* yacc.c:1646  */
     break;
 
   case 14:
-#line 97 "compiler/parser.y" /* yacc.c:1646  */
+#line 95 "compiler/parser.y" /* yacc.c:1646  */
     { (yyval.argval) = new Arg((yyvsp[0].ival)); }
-#line 1327 "/home/yduman/GdI3_Prak4/build/parser.cc" /* yacc.c:1646  */
+#line 1320 "/home/yadu/GdI3_Prak4/build/parser.cc" /* yacc.c:1646  */
     break;
 
   case 15:
-#line 99 "compiler/parser.y" /* yacc.c:1646  */
+#line 97 "compiler/parser.y" /* yacc.c:1646  */
     { (yyval.argval) = new Arg((yyvsp[0].ival)); }
-#line 1333 "/home/yduman/GdI3_Prak4/build/parser.cc" /* yacc.c:1646  */
+#line 1326 "/home/yadu/GdI3_Prak4/build/parser.cc" /* yacc.c:1646  */
     break;
 
 
-#line 1337 "/home/yduman/GdI3_Prak4/build/parser.cc" /* yacc.c:1646  */
+#line 1330 "/home/yadu/GdI3_Prak4/build/parser.cc" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -1561,7 +1554,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 101 "compiler/parser.y" /* yacc.c:1906  */
+#line 99 "compiler/parser.y" /* yacc.c:1906  */
 
 
 #define LEXER_IMPLEMENTED

@@ -4,7 +4,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/yduman/GdI3_Prak4/disasm/main.cc" "/home/yduman/GdI3_Prak4/build/CMakeFiles/disasm.dir/disasm/main.cc.o"
+  "/home/yadu/GdI3_Prak4/disasm/main.cc" "/home/yadu/GdI3_Prak4/build/CMakeFiles/disasm.dir/disasm/main.cc.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 

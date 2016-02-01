@@ -47,10 +47,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yduman/GdI3_Prak4
+CMAKE_SOURCE_DIR = /home/yadu/GdI3_Prak4
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yduman/GdI3_Prak4/build
+CMAKE_BINARY_DIR = /home/yadu/GdI3_Prak4/build
 
 #=============================================================================
 # Target rules for target CMakeFiles/compiler.dir
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/yduman/GdI3_Prak4/build
 CMakeFiles/compiler.dir/all:
 	$(MAKE) -f CMakeFiles/compiler.dir/build.make CMakeFiles/compiler.dir/depend
 	$(MAKE) -f CMakeFiles/compiler.dir/build.make CMakeFiles/compiler.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/yduman/GdI3_Prak4/build/CMakeFiles  1 2 3 4 5
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/yadu/GdI3_Prak4/build/CMakeFiles  1 2 3 4 5
 	@echo "Built target compiler"
 .PHONY : CMakeFiles/compiler.dir/all
 
@@ -69,9 +69,9 @@ all: CMakeFiles/compiler.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/compiler.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yduman/GdI3_Prak4/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yadu/GdI3_Prak4/build/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/compiler.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yduman/GdI3_Prak4/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yadu/GdI3_Prak4/build/CMakeFiles 0
 .PHONY : CMakeFiles/compiler.dir/rule
 
 # Convenience name for target.
@@ -94,7 +94,7 @@ clean: CMakeFiles/compiler.dir/clean
 CMakeFiles/disasm.dir/all:
 	$(MAKE) -f CMakeFiles/disasm.dir/build.make CMakeFiles/disasm.dir/depend
 	$(MAKE) -f CMakeFiles/disasm.dir/build.make CMakeFiles/disasm.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/yduman/GdI3_Prak4/build/CMakeFiles  6
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/yadu/GdI3_Prak4/build/CMakeFiles  6
 	@echo "Built target disasm"
 .PHONY : CMakeFiles/disasm.dir/all
 
@@ -104,9 +104,9 @@ all: CMakeFiles/disasm.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/disasm.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yduman/GdI3_Prak4/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yadu/GdI3_Prak4/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/disasm.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yduman/GdI3_Prak4/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yadu/GdI3_Prak4/build/CMakeFiles 0
 .PHONY : CMakeFiles/disasm.dir/rule
 
 # Convenience name for target.
@@ -129,7 +129,7 @@ clean: CMakeFiles/disasm.dir/clean
 CMakeFiles/sim.dir/all:
 	$(MAKE) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/depend
 	$(MAKE) -f CMakeFiles/sim.dir/build.make CMakeFiles/sim.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/yduman/GdI3_Prak4/build/CMakeFiles  7
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/yadu/GdI3_Prak4/build/CMakeFiles  7
 	@echo "Built target sim"
 .PHONY : CMakeFiles/sim.dir/all
 
@@ -139,9 +139,9 @@ all: CMakeFiles/sim.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/sim.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yduman/GdI3_Prak4/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yadu/GdI3_Prak4/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/sim.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yduman/GdI3_Prak4/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yadu/GdI3_Prak4/build/CMakeFiles 0
 .PHONY : CMakeFiles/sim.dir/rule
 
 # Convenience name for target.

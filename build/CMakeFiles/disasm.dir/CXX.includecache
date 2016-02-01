@@ -14,7 +14,7 @@ string
 ostream
 -
 
-/home/yduman/GdI3_Prak4/disasm/main.cc
+/home/yadu/GdI3_Prak4/disasm/main.cc
 cstdio
 -
 iostream
@@ -28,7 +28,7 @@ iomanip
 vector
 -
 ops.h
-/home/yduman/GdI3_Prak4/disasm/ops.h
+/home/yadu/GdI3_Prak4/disasm/ops.h
 util.h
-/home/yduman/GdI3_Prak4/disasm/util.h
+/home/yadu/GdI3_Prak4/disasm/util.h
 

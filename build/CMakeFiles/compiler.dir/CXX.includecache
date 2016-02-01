@@ -30,7 +30,7 @@ ops.h
 ostream
 -
 
-/home/yduman/GdI3_Prak4/build/lexer.cc
+/home/yadu/GdI3_Prak4/build/lexer.cc
 stdio.h
 -
 string.h
@@ -42,19 +42,19 @@ stdlib.h
 inttypes.h
 -
 io.h
-/home/yduman/GdI3_Prak4/build/io.h
+/home/yadu/GdI3_Prak4/build/io.h
 iostream
 -
 parser.h
-/home/yduman/GdI3_Prak4/build/parser.h
+/home/yadu/GdI3_Prak4/build/parser.h
 parser.hh
-/home/yduman/GdI3_Prak4/build/parser.hh
+/home/yadu/GdI3_Prak4/build/parser.hh
 util.h
-/home/yduman/GdI3_Prak4/build/util.h
+/home/yadu/GdI3_Prak4/build/util.h
 unistd.h
 -
 
-/home/yduman/GdI3_Prak4/build/parser.cc
+/home/yadu/GdI3_Prak4/build/parser.cc
 iostream
 -
 vector
@@ -64,9 +64,9 @@ cstdlib
 cstdio
 -
 util.h
-/home/yduman/GdI3_Prak4/build/util.h
+/home/yadu/GdI3_Prak4/build/util.h
 parser.h
-/home/yduman/GdI3_Prak4/build/parser.h
+/home/yadu/GdI3_Prak4/build/parser.h
 stddef.h
 -
 libintl.h
@@ -82,9 +82,9 @@ stdlib.h
 stdio.h
 -
 
-/home/yduman/GdI3_Prak4/build/parser.hh
+/home/yadu/GdI3_Prak4/build/parser.hh
 
-/home/yduman/GdI3_Prak4/compiler/main.cc
+/home/yadu/GdI3_Prak4/compiler/main.cc
 cstdio
 -
 iostream
@@ -96,15 +96,15 @@ cstdlib
 iomanip
 -
 util.h
-/home/yduman/GdI3_Prak4/compiler/util.h
+/home/yadu/GdI3_Prak4/compiler/util.h
 parser.h
-/home/yduman/GdI3_Prak4/compiler/parser.h
+/home/yadu/GdI3_Prak4/compiler/parser.h
 
-/home/yduman/GdI3_Prak4/compiler/ops.h
+/home/yadu/GdI3_Prak4/compiler/ops.h
 string
 -
 
-/home/yduman/GdI3_Prak4/compiler/parser.h
+/home/yadu/GdI3_Prak4/compiler/parser.h
 vector
 -
 iostream
@@ -116,11 +116,11 @@ unordered_map
 cstring
 -
 util.h
-/home/yduman/GdI3_Prak4/compiler/util.h
+/home/yadu/GdI3_Prak4/compiler/util.h
 ops.h
-/home/yduman/GdI3_Prak4/compiler/ops.h
+/home/yadu/GdI3_Prak4/compiler/ops.h
 
-/home/yduman/GdI3_Prak4/compiler/util.h
+/home/yadu/GdI3_Prak4/compiler/util.h
 ostream
 -
 

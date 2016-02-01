@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="CPP_MODULE" version="4">
   <component name="NewModuleRootManager">
-    <content url="file://$USER_HOME$/.CLion12/system/cmake/generated/8f83774e/8f83774e/Debug/lexer.cc">
-      <sourceFolder url="file://$USER_HOME$/.CLion12/system/cmake/generated/8f83774e/8f83774e/Debug/lexer.cc" isTestSource="false" />
+    <content url="file://$USER_HOME$/.CLion12/system/cmake/generated/139f1025/139f1025/Debug/lexer.cc">
+      <sourceFolder url="file://$USER_HOME$/.CLion12/system/cmake/generated/139f1025/139f1025/Debug/lexer.cc" isTestSource="false" />
     </content>
-    <content url="file://$USER_HOME$/.CLion12/system/cmake/generated/8f83774e/8f83774e/Debug/parser.cc">
-      <sourceFolder url="file://$USER_HOME$/.CLion12/system/cmake/generated/8f83774e/8f83774e/Debug/parser.cc" isTestSource="false" />
+    <content url="file://$USER_HOME$/.CLion12/system/cmake/generated/139f1025/139f1025/Debug/parser.cc">
+      <sourceFolder url="file://$USER_HOME$/.CLion12/system/cmake/generated/139f1025/139f1025/Debug/parser.cc" isTestSource="false" />
     </content>
-    <content url="file://$USER_HOME$/.CLion12/system/cmake/generated/8f83774e/8f83774e/MinSizeRel/lexer.cc">
-      <sourceFolder url="file://$USER_HOME$/.CLion12/system/cmake/generated/8f83774e/8f83774e/MinSizeRel/lexer.cc" isTestSource="false" />
+    <content url="file://$USER_HOME$/.CLion12/system/cmake/generated/139f1025/139f1025/MinSizeRel/lexer.cc">
+      <sourceFolder url="file://$USER_HOME$/.CLion12/system/cmake/generated/139f1025/139f1025/MinSizeRel/lexer.cc" isTestSource="false" />
     </content>
-    <content url="file://$USER_HOME$/.CLion12/system/cmake/generated/8f83774e/8f83774e/MinSizeRel/parser.cc">
-      <sourceFolder url="file://$USER_HOME$/.CLion12/system/cmake/generated/8f83774e/8f83774e/MinSizeRel/parser.cc" isTestSource="false" />
+    <content url="file://$USER_HOME$/.CLion12/system/cmake/generated/139f1025/139f1025/MinSizeRel/parser.cc">
+      <sourceFolder url="file://$USER_HOME$/.CLion12/system/cmake/generated/139f1025/139f1025/MinSizeRel/parser.cc" isTestSource="false" />
     </content>
-    <content url="file://$USER_HOME$/.CLion12/system/cmake/generated/8f83774e/8f83774e/RelWithDebInfo/lexer.cc">
-      <sourceFolder url="file://$USER_HOME$/.CLion12/system/cmake/generated/8f83774e/8f83774e/RelWithDebInfo/lexer.cc" isTestSource="false" />
+    <content url="file://$USER_HOME$/.CLion12/system/cmake/generated/139f1025/139f1025/RelWithDebInfo/lexer.cc">
+      <sourceFolder url="file://$USER_HOME$/.CLion12/system/cmake/generated/139f1025/139f1025/RelWithDebInfo/lexer.cc" isTestSource="false" />
     </content>
-    <content url="file://$USER_HOME$/.CLion12/system/cmake/generated/8f83774e/8f83774e/RelWithDebInfo/parser.cc">
-      <sourceFolder url="file://$USER_HOME$/.CLion12/system/cmake/generated/8f83774e/8f83774e/RelWithDebInfo/parser.cc" isTestSource="false" />
+    <content url="file://$USER_HOME$/.CLion12/system/cmake/generated/139f1025/139f1025/RelWithDebInfo/parser.cc">
+      <sourceFolder url="file://$USER_HOME$/.CLion12/system/cmake/generated/139f1025/139f1025/RelWithDebInfo/parser.cc" isTestSource="false" />
     </content>
-    <content url="file://$USER_HOME$/.CLion12/system/cmake/generated/8f83774e/8f83774e/Release/lexer.cc">
-      <sourceFolder url="file://$USER_HOME$/.CLion12/system/cmake/generated/8f83774e/8f83774e/Release/lexer.cc" isTestSource="false" />
+    <content url="file://$USER_HOME$/.CLion12/system/cmake/generated/139f1025/139f1025/Release/lexer.cc">
+      <sourceFolder url="file://$USER_HOME$/.CLion12/system/cmake/generated/139f1025/139f1025/Release/lexer.cc" isTestSource="false" />
     </content>
-    <content url="file://$USER_HOME$/.CLion12/system/cmake/generated/8f83774e/8f83774e/Release/parser.cc">
-      <sourceFolder url="file://$USER_HOME$/.CLion12/system/cmake/generated/8f83774e/8f83774e/Release/parser.cc" isTestSource="false" />
+    <content url="file://$USER_HOME$/.CLion12/system/cmake/generated/139f1025/139f1025/Release/parser.cc">
+      <sourceFolder url="file://$USER_HOME$/.CLion12/system/cmake/generated/139f1025/139f1025/Release/parser.cc" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/compiler/parser.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/compiler/main.cc" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/compiler/ops.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/compiler/main.cc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/compiler/parser.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/compiler/util.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/sim/main.cc" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/disasm/main.cc" isTestSource="false" />
@@ -45,10 +45,10 @@
           <root url="file://$MODULE_DIR$/compiler" />
           <root url="file://$MODULE_DIR$/sim" />
           <root url="file://$MODULE_DIR$/disasm" />
-          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/8f83774e/8f83774e/Release" />
-          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/8f83774e/8f83774e/Debug" />
-          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/8f83774e/8f83774e/RelWithDebInfo" />
-          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/8f83774e/8f83774e/MinSizeRel" />
+          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/139f1025/139f1025/Release" />
+          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/139f1025/139f1025/Debug" />
+          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/139f1025/139f1025/RelWithDebInfo" />
+          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/139f1025/139f1025/MinSizeRel" />
         </CLASSES>
         <SOURCES>
           <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
@@ -58,26 +58,26 @@
           <root url="file://$MODULE_DIR$/compiler" />
           <root url="file://$MODULE_DIR$/sim" />
           <root url="file://$MODULE_DIR$/disasm" />
-          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/8f83774e/8f83774e/Release" />
-          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/8f83774e/8f83774e/Debug" />
-          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/8f83774e/8f83774e/RelWithDebInfo" />
-          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/8f83774e/8f83774e/MinSizeRel" />
+          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/139f1025/139f1025/Release" />
+          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/139f1025/139f1025/Debug" />
+          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/139f1025/139f1025/RelWithDebInfo" />
+          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/139f1025/139f1025/MinSizeRel" />
         </SOURCES>
         <excluded>
-          <root url="file://$MODULE_DIR$/compiler/parser.h" />
-          <root url="file://$MODULE_DIR$/compiler/main.cc" />
           <root url="file://$MODULE_DIR$/compiler/ops.h" />
+          <root url="file://$MODULE_DIR$/compiler/main.cc" />
+          <root url="file://$MODULE_DIR$/compiler/parser.h" />
           <root url="file://$MODULE_DIR$/compiler/util.h" />
           <root url="file://$MODULE_DIR$/sim/main.cc" />
           <root url="file://$MODULE_DIR$/disasm/main.cc" />
-          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/8f83774e/8f83774e/Release/lexer.cc" />
-          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/8f83774e/8f83774e/Release/parser.cc" />
-          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/8f83774e/8f83774e/Debug/lexer.cc" />
-          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/8f83774e/8f83774e/Debug/parser.cc" />
-          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/8f83774e/8f83774e/RelWithDebInfo/lexer.cc" />
-          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/8f83774e/8f83774e/RelWithDebInfo/parser.cc" />
-          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/8f83774e/8f83774e/MinSizeRel/lexer.cc" />
-          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/8f83774e/8f83774e/MinSizeRel/parser.cc" />
+          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/139f1025/139f1025/Release/lexer.cc" />
+          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/139f1025/139f1025/Release/parser.cc" />
+          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/139f1025/139f1025/Debug/lexer.cc" />
+          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/139f1025/139f1025/Debug/parser.cc" />
+          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/139f1025/139f1025/RelWithDebInfo/lexer.cc" />
+          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/139f1025/139f1025/RelWithDebInfo/parser.cc" />
+          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/139f1025/139f1025/MinSizeRel/lexer.cc" />
+          <root url="file://$USER_HOME$/.CLion12/system/cmake/generated/139f1025/139f1025/MinSizeRel/parser.cc" />
         </excluded>
       </library>
     </orderEntry>
