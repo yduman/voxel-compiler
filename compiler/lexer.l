@@ -20,7 +20,7 @@ using namespace std;
 %%
 [ \t\r\n]      ;
 [0-9]+			{ yylval.ival = atoi(yytext); return NUM; }
-0x[0-9a-f]+		{ yylval.ival = strtol(yytext, NULL, 0); return HEX; }
+0x[0-9a-fA-F]+		{ yylval.ival = strtol(yytext, NULL, 0); return HEX; }
 [a-zA-Z0-9]+	{ yylval.sval = strdup(yytext); return NAME; }
 "," { return COMMA; }
 "("	{ return BLEFT; }

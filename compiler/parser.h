@@ -242,7 +242,6 @@ struct Expr {
         {
             uint32_t reg_left = lhs->code(reg, writer);
             reg = reg_left + 1;
-
             writer << OP_NEG << reg << reg_left;
         }
         else
@@ -295,7 +294,7 @@ struct Ast {
 
     inline bool check(uint32_t &dim)
     {
-        // die Konstante dim = 128 ist in der main definiert
+        dim = 128;
         return root->check(dim);
     }
 

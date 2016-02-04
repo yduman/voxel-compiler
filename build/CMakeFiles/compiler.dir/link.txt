@@ -1,1 +1,0 @@
-/usr/bin/c++    -std=c++11 -g -O3 -DNDEBUG    CMakeFiles/compiler.dir/compiler/main.cc.o CMakeFiles/compiler.dir/parser.cc.o CMakeFiles/compiler.dir/lexer.cc.o  -o compiler -rdynamic 

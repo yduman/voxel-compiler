@@ -26,7 +26,7 @@ int main(int argc, char **argv)
 
 	std::cout << "Printing the AST: " << ast << std::endl;
 
-	uint32_t dim = 128;
+	uint32_t dim = 0;
 	bool sem = ast.check(dim);
 	std::cout << "Semantic check OK: " << (sem ? "Yes" : "No") << std::endl;
 	if (!sem)
